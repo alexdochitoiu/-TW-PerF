@@ -1,3 +1,12 @@
+body {
+    background: repeating-linear-gradient(
+            45deg,
+            #e2e2e2,
+            #f3f3f3 5px,
+            #cecece 3px
+    );
+}
+
 ul {
     margin-bottom: 0;
 }
@@ -24,7 +33,7 @@ a:hover {
 .position-fixed {
     position: fixed;
     transition: width 2s;
-
+    z-index:2000;
 }
 
 .header-desktop-normal {
@@ -142,6 +151,30 @@ a:hover {
     border-radius: 10px;
 }
 
+.box2 {
+    padding: 15px;
+    height: 170px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background:#009688;
+}
+.box2 h2 {
+    color: white;
+    font-size: 21px;
+    font-weight: bolder;
+    font-family: 'Verdana', serif;
+    position: relative;
+    text-align: center;
+    margin-top: -45px;
+    margin-bottom: 30px;
+}
+.box2 p {
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+    font-family: 'Verdana', serif;
+}
+
 .height-70px {
     height: 70px;
 }
@@ -149,7 +182,9 @@ a:hover {
 .margin-bottom-10 {
     margin-bottom: 10px;
 }
-
+.margin-left-15 {
+    margin-left: 15px;
+}
 .width-70px {
     width: 70px;
 }
@@ -224,6 +259,70 @@ a:hover {
     display: block;
 }
 
+.announcement {
+    position: relative;
+    background: white;
+    width: auto;
+    max-height: 375px;
+    box-shadow: 0 2px 15px 0px #3a3737;
+    margin: 35px 0px 45px 0px;
+    text-decoration: none;
+    clear: both;
+    overflow:hidden;
+    height:1%;
+}
+.announcement img {
+    background: grey;
+    position: relative;
+    margin: 5px;
+    width: 97%;
+    height: 250px;
+    object-fit: contain;
+}
+.announcement div {
+    text-align: center;
+    position: relative;
+    padding: 3px;
+    width: auto;
+    height: 30px;
+    background:#009688;
+    color: white;
+    font-size:18px;
+}
+.announcement div span {
+    font-size: 0.7em;
+    color: #d3d3d3;
+}
+.announcement p#title {
+    padding: 0px 5px 0px 5px;
+    color: #343434;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    font-family: 'Impact', serif;
+}
+
+.announcement p#uploadedBy {
+    padding: 0px 5px 0px 5px;
+    color: rgba(0,0,0,0.5);
+    font-size: 12px;
+    display: inline;
+    text-align: center;
+    font-family: 'Verdana', serif;
+    float: left;
+    margin: 0 0 5px 10px;
+}
+
+.announcement p#timeAdded {
+    padding: 0px 5px 0px 5px;
+    color: rgba(0,0,0,0.5);
+    font-size: 12px;
+    display: inline;
+    text-align: center;
+    font-family: 'Verdana', serif;
+    float: right;
+    margin: 0 10px 5px 0;
+}
 
 @media screen and (max-width: 540px) {
     .no-on-mobile {
