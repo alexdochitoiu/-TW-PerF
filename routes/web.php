@@ -13,3 +13,6 @@
 use App\Http\Controllers;
 
 Route::get('/', 'IndexController@index');
+Route::get('/anunt', function () {
+    return view('pages.anunt');
+});

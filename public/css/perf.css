@@ -75,20 +75,16 @@ a:hover {
 }
 
 .header-info-mobile {
-
     width: 100%;
     background: #01695d;
     box-shadow: inset 0 0 11px -3px black;
     margin-top: 10px;
-
-
 }
 
 .img-logo-header {
     height: 47px;
     width: 175px;
     float: left;
-
 }
 
 .container-header {
@@ -156,7 +152,7 @@ a:hover {
     height: 170px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background:#009688;
+    background: rgba(0, 0, 0, 0.65);
 }
 .box2 h2 {
     color: white;
@@ -165,7 +161,7 @@ a:hover {
     font-family: 'Verdana', serif;
     position: relative;
     text-align: center;
-    margin-top: -45px;
+    margin-top: -5px;
     margin-bottom: 30px;
 }
 .box2 p {
@@ -324,6 +320,163 @@ a:hover {
     margin: 0 10px 5px 0;
 }
 
+.contentAnunt {
+    margin-top: 15px;
+    background: white;
+    box-shadow: 0 0 10px 0 #afa6a6;
+    float: left;
+    display: inline-block;
+}
+.contentAnunt h1 {
+    color: #3d3d3d;
+}
+.contentAnunt h1 img {
+    width: 35px;
+    height: auto;
+    margin-bottom: 5px;
+}
+textarea {
+    resize: vertical; /* user can resize vertically, but width is fixed */
+}
+h1.pretAnunt {
+    text-align: right;
+    font-family: 'Verdana', serif;
+    font-weight: 300;
+    color: #009688;
+}
+.bg-style{
+    background: #eaeaea;
+}
+.bg-green-color {
+    color: #ffffff;
+    border-color: #008276;
+    background: #009688;
+}
+.bg-green-color:hover,
+.bg-green-color:active,
+.bg-green-color:focus
+{
+    color: #ffffff;
+    border-color: #009f90;
+    background: #00776c;
+}
+h1.pretAnunt span {
+    font-size: 18px;
+}
+.description h3 img {
+    width: 25px;
+    height: auto;
+    margin-bottom: 5px;
+}
+.timeAdded img {
+    width: 12px;
+    height: auto;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+.timeAdded {
+    font-family: 'Verdana', serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #6f6f6f;
+    padding-bottom: 20px;
+}
+.timeAdded span {
+    float: right;
+}
+.description p {
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Verdana', serif;
+    color: #282828;
+    font-weight: 400;
+    text-align: justify;
+}
+.contactForm {
+    position: sticky;
+    top: 100px;
+    float: right;
+    background: white;
+    box-shadow: 0 0 10px 0 #afa6a6;
+    width: 250px;
+    height: 320px;
+    display: inline-block;
+}
+
+.contactForm .title {
+    font-family: 'Verdana', serif;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    padding-top: 4px;
+    height: 30px;
+    background:#009688;
+}
+
+.contactForm img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0 5px 55px;
+    background: #e6e6e6;
+}
+
+.contactForm .sellerName {
+    margin-top: 10px;
+    font-family: 'Verdana', serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #787878;
+}
+
+.contactForm p {
+    font-family: 'Verdana', serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #bcbcbc;
+    text-align:center;
+}
+
+.contactBtn {
+    width: 220px;
+    margin: 10px 0 0 0;
+    height: 40px;
+    font-size: 18px;
+}
+
+.contactBtn img {
+    position: relative;
+    background: transparent;
+    width: 22px;
+    height: auto;
+    display: inline;
+    margin: 0;
+    margin-bottom: 2px;
+}
+#imgGallery {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.65);
+}
+#imgGallery img {
+    width: 180px;
+    height: 180px;
+    background: lightgrey;
+    margin: 10px 14px;
+    object-fit: contain;
+}
+.verticalLine {
+     border-left: 1px solid rgba(193, 193, 193, 0.65);
+ }
+
+.detaliiAnunt h2{
+    font-size: 14px;
+    font-weight: 600;
+    color: #5e5e5e;
+}
+.detaliiAnunt h2 span{
+    float: right;
+    color: black;
+}
 @media screen and (max-width: 540px) {
     .no-on-mobile {
         display: none;
@@ -336,9 +489,17 @@ a:hover {
 
 }
 
+.map {
+    height: 400px;
+    width: auto;
+    margin: 0 25px;
+}
 @media screen and (max-width: 766px) {
     .box {
         height: 200px;
+    }
+    .box2 {
+        height: 260px;
     }
 }
 

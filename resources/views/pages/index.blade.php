@@ -53,35 +53,18 @@
         <div class="box2 margin-bottom-10">
             <h2> Filtreaza rezultatele </h2>
             <div class="row">
-                <div class="col-sm-3 col-xs-12">
-                    <p class="margin-left-15"> Pret </p>
-                </div>
-
-                <div class="col-sm-3 col-xs-12">
-                    <p class="margin-left-15"> Suprafata </p>
-                </div>
-
-                <div class="col-sm-3 col-xs-12">
-                    <p class="margin-left-15"> Nr. camere / Compartimentare </p>
-                </div>
-
-                <div class="col-sm-3 col-xs-12">
-                    <p class="margin-left-15"> Etaj / An constructie </p>
-                </div>
-            </div>
-            <div class="row">
             <form class="form" role="form" method="get" action="">
-                <div class="col-sm-3 col-xs-12">
-                    <div class="col-sm-12 col-xs-6">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="col-sm-12 col-xs-12">
                         <select class="form-control margin-bottom-10">
-                            <option value="" disabled selected> De la </option>
+                            <option value="" disabled selected> Pret de la ... </option>
                             <option>100 RON</option>
                             <option>250 RON</option>
                             <option>500 RON</option>
                             <option>750 RON</option>
                         </select>
                         <select class="form-control margin-bottom-10">
-                            <option value="" disabled selected> Pana la </option>
+                            <option value="" disabled selected> Pret pana la ... </option>
                             <option>100 RON</option>
                             <option>250 RON</option>
                             <option>500 RON</option>
@@ -89,10 +72,10 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-3 col-xs-12">
-                    <div class="col-sm-12 col-xs-6">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="col-sm-12 col-xs-12">
                         <select class="form-control margin-bottom-10">
-                            <option value="" disabled selected> De la </option>
+                            <option value="" disabled selected> Suprafata de la ...</option>
                             <option>15 mp</option>
                             <option>25 mp</option>
                             <option>30 mp</option>
@@ -106,7 +89,7 @@
                             <option>100 mp</option>
                         </select>
                         <select class="form-control margin-bottom-10">
-                            <option value="" disabled selected> Pana la </option>
+                            <option value="" disabled selected> Suprafata pana la ...</option>
                             <option>15 mp</option>
                             <option>25 mp</option>
                             <option>30 mp</option>
@@ -121,8 +104,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-3 col-xs-12 ">
-                    <div class="col-sm-12 col-xs-6 ">
+                <div class="col-sm-3 col-xs-6 ">
+                    <div class="col-sm-12 col-xs-12 ">
                         <select class="form-control margin-bottom-10">
                             <option value="" disabled selected> Numar camere </option>
                             <option>Toate</option>
@@ -142,8 +125,8 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-3 col-xs-12">
-                    <div class="col-sm-12 col-xs-6 ">
+                <div class="col-sm-3 col-xs-6">
+                    <div class="col-sm-12 col-xs-12 ">
                         <select class="form-control margin-bottom-10">
                             <option value="" disabled selected> Etaj </option>
                             <option>Toate</option>
@@ -177,7 +160,7 @@
         @while($i <= $anunturi)
             <?php $i++; ?>
                 <div class="col-xs-6 col-sm-4">
-                    <a href="#" >
+                    <a href="/anunt" >
                     <div class="announcement">
                         <div> <span>PRET</span> 576 RON</div>
                         <img src="images/house.jpg" />
