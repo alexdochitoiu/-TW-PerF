@@ -8,11 +8,48 @@ body {
 }
 
 ul {
+    padding-left: 0px;
+ }
+
+li {
+    list-style-type: none;
+}
+
+.help-info {
+    font-size: 16px;
+    font-weight: 700;
+    color: #003850;
+}
+.textarea-announce{
+    max-height: 200px;
+    width: 100%;
+    max-width: 100%;
+    min-height:100px;
+
+}
+.help-menu-li {
+    color:white;
+    background-color:#00796b;
+    padding:10px;
+    border:2px solid black;
+    border-radius: 2px;
+    margin:5px 0 5px 0;
+}
+.display-help {
+    opacity:0.6;
+}
+.help-menu-li:hover{
+    opacity:0.6;
+}
+
+ul {
     margin-bottom: 0;
 }
+
 a:hover {
     text-decoration: none;
 }
+
 .color-header {
     background-color: #00796b;
 }
@@ -38,6 +75,7 @@ a:hover {
 
 .header-desktop-normal {
     width: 100%;
+    z-index: 10;
 
 }
 
@@ -50,6 +88,7 @@ a:hover {
 }
 
 .menu-normal-information > a {
+    padding: 0 15px 0 15px;
     display: inline-block;
     color: #dae8e7;
     text-decoration: none;
@@ -64,11 +103,6 @@ a:hover {
     text-decoration: none;
 }
 
-.menu-normal-information li {
-    padding: 0 15px 0 15px;
-    list-style-type: none;
-}
-
 .header-information {
     float: left;
     margin: 0 auto;
@@ -79,6 +113,7 @@ a:hover {
     background: #01695d;
     box-shadow: inset 0 0 11px -3px black;
     margin-top: 10px;
+
 }
 
 .img-logo-header {
@@ -214,6 +249,24 @@ a:hover {
     display: none;
 }
 
+.display-search {
+    display:none;
+}
+.buttom_money {
+    padding:8px;
+    color:white;
+    background-color: #0d3625;
+    border:1px solid red;
+}
+.text-white {
+    color:white;
+}
+.padding-left-0 {
+    padding-left: 0;
+}
+.padding-right-0 {
+    padding-right: 0;
+}
 .menu-bottom {
     background-color: #80cbc4;
     color: white;
@@ -243,6 +296,7 @@ a:hover {
     font-weight: 900;
     padding: 10px 0 10px 10px;
 }
+
 .informationMenuText:hover {
     color: #c5a7a7;
 }
@@ -253,6 +307,53 @@ a:hover {
 
 .display {
     display: block;
+}
+.forgotPassInfo {
+    margin: 0 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Verdana', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #343434;
+}
+
+#location {
+    width:10px;
+    height:10px;
+    background: red;
+}
+
+footer
+{
+    margin-top: 100px;
+    padding: 5px 0 15px 0;
+    height: 120px;
+    text-align:center;
+    color:white;
+}
+
+footer h4 {
+    font-family: 'BioRhyme', serif;
+}
+
+footer span {
+    opacity: 0.75;
+    color: #ffffff;
+    font-size: 15px;
+}
+footer img {
+    width:40px; height:40px;
+    opacity:0.6;
+    transition-duration: 1s;
+    perspective: 800px;
+    perspective-origin: 50% 100px;
+    transition-property: all;
+}
+footer img:hover {
+    opacity:1;
+    width:40px; height:40px;
+    transform:rotateY(180deg);
 }
 
 .announcement {
@@ -393,7 +494,7 @@ h1.pretAnunt span {
     text-align: justify;
 }
 .contactForm {
-    position: sticky;
+    position: fixed;
     top: 100px;
     float: right;
     background: white;
@@ -401,6 +502,7 @@ h1.pretAnunt span {
     width: 250px;
     height: 320px;
     display: inline-block;
+    margin-left: 25px;
 }
 
 .contactForm .title {
@@ -410,7 +512,105 @@ h1.pretAnunt span {
     color: white;
     padding-top: 4px;
     height: 30px;
-    background:#009688;
+    background:#009688;}
+
+.title_add_announce {
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+.box_add_announce {
+    height:100%;
+
+}
+
+.background-black {
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 3px;
+}
+
+.add_photo_announce {
+    border: 2px solid #00796b;
+    min-height: 100px;
+    border-radius: 3px;
+
+}
+
+.margin-top-bottom-15px {
+    margin: 15px 0 15px 0;
+}
+
+.background-grey {
+    background-color: white;
+}
+.width-100{
+    width:100%;
+}
+.width-50{
+    width:50%;
+}
+.text-25px {
+    font-size: 25px;
+
+}
+.max-height-40px {
+    max-height: 40px;
+}
+.text-center{
+    text-align: center;
+}
+.details_announce {
+    color: #635d5d;
+    border-radius: 5px;
+    padding-left:16px;
+    height:34px;
+}
+#add_announce_submit {
+
+    text-align: center;
+
+}
+.bottom_announce {
+    background-color: #00796b;
+}
+
+.bottom_announce_1{
+    color:white;
+    font-size: 20px;
+    padding: 10px 75px;
+    background-color: #00796b;
+    border: 2px solid #2d796e;
+    border-radius: 5px;
+
+}
+.margin-bottom-30px{
+    margin-bottom:30px;
+}
+.bottom_announce_1:hover {
+    color: #b1ffe5;
+    box-shadow:inset 0 0 11px -3px black ;
+}
+.background-image-announce {
+
+    border:3px solid #bdbdbd;
+    border-radius: 3px;
+    font-size:35px;
+    color:#bdbdbd;
+    padding:10px;
+
+}
+.background-image-announce-first {
+    border:3px dashed #bdbdbd;
+}
+.padding-10 {
+    padding:10px;
+}
+.center {
+    margin:0 auto;
+}
+.border-radius-5{
+    border-radius: 5px;
+
 }
 
 .contactForm img {
@@ -456,6 +656,7 @@ h1.pretAnunt span {
 #imgGallery {
     padding: 15px;
     background: rgba(0, 0, 0, 0.65);
+    text-align: center;
 }
 #imgGallery img {
     width: 180px;
@@ -477,6 +678,171 @@ h1.pretAnunt span {
     float: right;
     color: black;
 }
+
+
+
+.map {
+    height: 400px;
+    width: auto;
+    margin: 0 25px 25px 25px;
+}
+
+
+.box_login, .box_register {
+    background-color: rgba(0,0,0,0.65);
+    border-radius: 10px;
+    padding-bottom: 30px;
+    margin-left: 25%;
+    margin-top: 40px;
+    width: 50%;
+}
+
+.box_register {
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20%;
+    width: 60%;
+}
+
+.box_login .omb_authTitle, .box_register .omb_authTitle {
+    text-align: center;
+    line-height: 300%;
+    background-color: #00796b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #dae8e7;
+}
+
+.box_login .omb_socialButtons, .box_register .omb_socialButtons {
+    margin: auto;
+    margin-top: 25px;
+    width: 100%;
+}
+    
+.box_login .omb_socialButtons a, .box_register .omb_socialButtons a {
+    font-weight: bold;
+    color: white;
+    opacity:0.9;
+}
+.box_login .omb_socialButtons a:hover, .box_register .omb_socialButtons a:hover {
+    color: white;
+    opacity:1;      
+}
+.box_login .omb_socialButtons .omb_btn-facebook, .box_register .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
+.box_login .omb_socialButtons .omb_btn-twitter, .box_register .omb_socialButtons .omb_btn-twitter {background: #00aced;}
+.box_login .omb_socialButtons .omb_btn-google, .box_register .omb_socialButtons .omb_btn-google {background: #c32f10;}
+
+.box_login .text_login, .box_register .text_login {
+    color: #dae8e7;
+}
+
+.box_login .omb_loginOr, .box_register .omb_loginOr {
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.box_login .omb_loginOr .omb_hrOr, .box_register .omb_loginOr .omb_hrOr {
+    background-color: #cdcdcd;
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.box_login .omb_loginOr .omb_spanOr, .box_register .omb_loginOr .omb_spanOr {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -0.6em;
+    margin-left: -1.5em;
+    background-color: white;
+    width: 3em;
+    text-align: center;
+}
+
+.box_login .form_align, .box_register .form_align {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.box_login .omb_loginForm .input-group.i, .box_register .omb_loginForm .input-group.i {
+    width: 2em;
+}
+
+.box_login .btn_costum, .box_register .btn_costum {
+    background-color: #00796b;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+
+.question_register, .question_register_align {
+    background-color: rgba(0,0,0,0.65);
+    border-radius: 10px;
+    padding-bottom: 30px;
+    margin-left: 25%;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.question_register_align {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.question_register .title, .question_register_align .title {
+    text-align: center;
+    line-height: 300%;
+    color: #dae8e7;
+}
+
+.question_register .btn_costum, .question_register_align .btn_costum {
+    background-color: #00796b;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    width: 70%;
+    margin: auto;
+}
+
+@media (min-width: 993px) {
+    .box_login {
+        margin-left: 30px;
+    }
+
+    .omb_forgotPwd {
+        text-align: right;
+        margin-top:10px;
+    }
+
+    .box_login .form_align {
+        margin-left: 80px;
+    }
+
+    .question_register {
+        margin-left: 60%;
+        margin-top: -400px;
+        width: 40%;
+    }
+
+    .box_register {
+        margin-left: 30px;
+    }
+
+    .box_register .form_align {
+        margin-left: 10px;
+    }
+
+    .question_register_align {
+        margin-left: 65%;
+        margin-top: -460px;
+        width: 35%;
+    }          
+}
+
 @media screen and (max-width: 540px) {
     .no-on-mobile {
         display: none;
@@ -487,19 +853,72 @@ h1.pretAnunt span {
 
     }
 
-}
+    .box_login, .box_register {
+        text-align: center;
+        margin: 40px 0 0 20px ;
+        width: 90%;
+        font-size: 12px;
+    }
+    .question_register, .question_register_align {
 
-.map {
-    height: 400px;
-    width: auto;
-    margin: 0 25px;
+        text-align: center;
+        margin: 40px 0 0 20px ;
+        width: 90%;
+        font-size: 12px;
+    }
+    .box_login .omb_authTitle, .box_register .omb_authTitle {
+        text-align: center;
+        line-height: 150%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        color: #dae8e7;
+        font-weight: 300;
+    }
+    .question_register .title, .question_register_align .title {
+        text-align: center;
+        line-height: 150%;
+        color: #dae8e7;
+        font-weight: 300;
+    }
 }
 @media screen and (max-width: 766px) {
     .box {
         height: 200px;
     }
+
     .box2 {
-        height: 260px;
+        height: 260px;}
+
+    .padding-left-0 {
+        padding-right:0;
+    }
+    .padding-right-0 {
+        padding-left: 0;
+
     }
 }
 
+
+
+@media screen and (max-width: 1200px) {
+
+    .contentAnunt {
+        width:100%;
+        float: none;
+    }
+    .contactForm {
+        top: 15px;
+        position: relative;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contactForm > img {
+        left: 50%;
+        position: relative;
+        margin-left: -55px;
+    }
+    .contactForm .contactBtn {
+        width: 100%;
+    }
+}

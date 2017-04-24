@@ -173,7 +173,4 @@
             @endwhile
         </div>
     </div>
-    <div class="test">
-
-    </div>
     @endsection

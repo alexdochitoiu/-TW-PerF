@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
-    <script src="https://openlayers.org/en/v4.1.0/build/ol.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.4.0/ol.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -15,7 +16,6 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-
 
 
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
@@ -37,7 +37,7 @@
     <!-- UI JS file -->
     <script src="gallery/photoswipe-ui-default.min.js"></script>
 
-    <link rel="icon" href="images/logo.png" type="image/png"/>
+    <link rel="icon" href="images/icon.png" type="image/png"/>
 
 </head>
 <body>
@@ -51,20 +51,13 @@
                 <div class="menu-desktop">
                     <div class="header-information">
                         <ul class="menu-normal-information line-height-header">
-                            <a href="/autentificare">
-                                <li>Autentificare</li>
-                            </a>
-                            <a href="/creare_cont">
-                                <li>Creare cont</li>
-                            </a>
-                            <a href="/ajutor">
-                                <li>Ajutor</li>
-                            </a>
-
+                            <a href="/autentificare">Autentificare</a>
+                            <a href="/inregistrare">Creare cont</a>
+                            <a href="/ajutor">Ajutor</a>
                         </ul>
 
                     </div>
-                    <a href="/">
+                    <a href="/adauga_anunt">
                         <span class="add_announce line-height-header">
                             <span class="add_announce_padding">
                                 <i class="fa fa-plus display-inline" aria-hidden="true"></i>
@@ -96,7 +89,10 @@
                                                              aria-hidden="true"></i> Contul meu</span></a>
             <a href="/"><span class="informationMenuText"> <i class="fa fa-home"
                                                               aria-hidden="true"></i> Acasa</span></a>
-            <a href="/"><span class="informationMenuText"><i class="fa fa-envira" aria-hidden="true"></i> Despre</span></a>
+            <a href="/ajutor"><span class="informationMenuText"><i class="fa fa-envira" aria-hidden="true"></i> Despre</span></a>
+            <a href="/adauga_anunt"><span class="informationMenuText"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adauga anunt</span></a>
+
+            <a href="/ajutor"><span class="informationMenuText"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Ajutor</span></a>
 
         </div>
     </div>
@@ -105,10 +101,14 @@
 @yield('content')
 
 <script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
 <script src="{{asset('js/perf.js')}}"></script>
-<footer>
-
+<footer class="color-header">
+    <h4> Ne puteti urmari pe: </h4>
+    <a href="http://www.facebook.com/"><img src="images/facebook.png" /></a>
+    <a href="http://www.google.com/"><img src="images/googleplus.png" /></a>
+    <a href="http://www.twitter.com/"><img src="images/twitter.png" /></a>
+    <br>
+    <span>PerF &copy; 2017</span>
 </footer>
 </body>
 </html>
