@@ -7,40 +7,40 @@
 @section('content')
     <div class="container">
         <div class="box_register">
-            <h3 class="omb_authTitle">Inregistrare cont pe PerF</h3>
-            <div class="row omb_socialButtons">
+            <h3 class="authTitle">Inregistrare cont pe PerF</h3>
+            <div class="row socialButtons">
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                    <a href="#" class="btn btn-lg btn-block btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
                         <span class="hidden-xs">Facebook</span>
                     </a>
                 </div>
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+                    <a href="#" class="btn btn-lg btn-block btn-twitter">
                         <i class="fa fa-twitter visible-xs"></i>
                         <span class="hidden-xs">Twitter</span>
                     </a>
                 </div>  
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                    <a href="#" class="btn btn-lg btn-block btn-google">
                         <i class="fa fa-google-plus visible-xs"></i>
                         <span class="hidden-xs">Google +</span>
                     </a>
                 </div>  
             </div>
 
-            <div class="row omb_loginOr">
+            <div class="row loginOr">
                 <div class="col-xs-12 col-sm-12">
-                    <hr class="omb_hrOr">
-                    <span class="omb_spanOr">sau</span>
+                    <hr class="hrOr">
+                    <span class="spanOr">sau</span>
                 </div>
             </div>
 
             <div class="row form_align">
                 <div class="col-xs-12 col-sm-12">    
-                    <form class="omb_loginForm" autocomplete="off" method="POST">
+                    <form class="loginForm" autocomplete="off" method="POST">
                         <div class="col-xs-12 col-md-6"> 
-                            <center><h3 class="text_login">Detalii Cont</h3></center>
+                            <h3 class="text_login">Detalii Cont</h3>
                             <h4 class="text_login">Nume Cont:</h4>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -66,7 +66,7 @@
                             </label>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                        <center><h3 class="text_login costum_responsive">Detalii Personale</h3></center>
+                        <h3 class="text_login costum_responsive">Detalii Personale</h3>
                         <h4 class="text_login">Nume:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-address-card"></i></span>
@@ -100,7 +100,7 @@
         </div>
         <div class="question_register_align">
             <h3 class="title"> Aveti deja un cont PerF?</h3>
-            <hr class="omb_hrOr">
+            <hr class="hrOr">
             <a href="/autentificare" class="btn btn-lg btn-primary btn-block btn_costum">Conecteaza-te</a>
         </div>
     </div>

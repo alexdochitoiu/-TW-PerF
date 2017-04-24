@@ -6,10 +6,10 @@
         <div class="modal-content ">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title" align="center">Trimite mesaj privat vanzatorului</h3>
+                <h3 class="modal-title">Trimite mesaj privat vanzatorului</h3>
             </div>
             <div class="modal-body bg-style">
-                <form class="form-horizontal" role="form" method="post" action="#">
+                <form class="form-horizontal" method="post" action="#">
                     <div class="form-group">
 
                         <label for="name" class="col-sm-2 control-label">Nume</label>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="message" class="col-sm-2 control-label">Mesaj</label>
+                        <label class="col-sm-2 control-label">Mesaj</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" rows="4" name="message"></textarea>
                         </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn bg-green-color">
-                    <img src="images/message.png" width="25"/>
+                    <img src="images/message.png" width="25" alt=""/>
                     Trimite mesaj
                 </button>
             </div>

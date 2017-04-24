@@ -6,12 +6,10 @@
 
 @section('content')
     <div class="search_background">
-
-
         <div class="container">
             <div class="row">
                 <div class="search">
-                    <form class="form" role="form" method="get" action="">
+                    <form class="form" method="get" action="#">
                         <div class="search-three-bar">
                             <div class="box">
                             <div class="col-sm-6 col-xs-12">
@@ -53,7 +51,7 @@
         <div class="box2 margin-bottom-10">
             <h2> Filtreaza rezultatele </h2>
             <div class="row">
-            <form class="form" role="form" method="get" action="">
+            <form class="form" method="get" action="#">
                 <div class="col-sm-3 col-xs-6">
                     <div class="col-sm-12 col-xs-12">
                         <select class="form-control margin-bottom-10">
@@ -163,7 +161,7 @@
                     <a href="/anunt" >
                     <div class="announcement">
                         <div> <span>PRET</span> 576 RON</div>
-                        <img src="images/house.jpg" />
+                        <img src="images/house.jpg" alt="house"/>
                         <p id="title"> Aici va fi pus un titlu. Dar la timpul potrivit...</p>
                         <p id="uploadedBy">Adaugat de Ion Gheorghita</p>
                         <p id="timeAdded">12:45 PM  22.03.2017</p>

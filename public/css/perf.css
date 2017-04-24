@@ -82,23 +82,26 @@ a:hover {
 .menu-desktop {
     float: right;
 }
-
+h3.text_login {
+    text-align: center;
+}
 .line-height-header {
     line-height: 46px;
 }
-
-.menu-normal-information > a {
-    padding: 0 15px 0 15px;
+.menu-normal-information li{
     display: inline-block;
+}
+.menu-normal-information  li > a {
+    padding: 0 15px 0 15px;
     color: #dae8e7;
     text-decoration: none;
 }
 
-.menu-normal-information > a:visited {
+.menu-normal-information  li > a:visited {
     display: none;
 }
 
-.menu-normal-information > a:hover {
+.menu-normal-information  li > a:hover {
     color: white;
     text-decoration: none;
 }
@@ -317,13 +320,22 @@ a:hover {
     font-weight: 400;
     color: #343434;
 }
-
-#location {
+.legend {
+    height:20px;
+    width: 20px;
+    opacity:0.8;
+}
+#location , #location2{
     width:10px;
     height:10px;
-    background: red;
 }
 
+#location img  , #location2 img {
+    wdith: 25px;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+}
 footer
 {
     margin-top: 100px;
@@ -465,6 +477,14 @@ h1.pretAnunt span {
     font-size: 18px;
 }
 .description h3 img {
+    width: 25px;
+    height: auto;
+    margin-bottom: 5px;
+}
+.legendTitle {
+    margin-bottom: 25px;
+}
+.legendTitle h3 img {
     width: 25px;
     height: auto;
     margin-bottom: 5px;
@@ -686,7 +706,26 @@ h1.pretAnunt span {
     width: auto;
     margin: 0 25px 25px 25px;
 }
+.map:-moz-full-screen {
+    height: 100%;
+    width: 100%;
+}
+.map:-webkit-full-screen {
+    height: 100%;
+    width: 100%;
+}
+.map:-ms-fullscreen {
+    height: 100%;
+    width: 100%;
+}
+.map:fullscreen {
+    height: 100%;
+    width: 100%;
+}
 
+.modal-title {
+    text-align: center;
+}
 
 .box_login, .box_register {
     background-color: rgba(0,0,0,0.65);
@@ -704,7 +743,7 @@ h1.pretAnunt span {
     width: 60%;
 }
 
-.box_login .omb_authTitle, .box_register .omb_authTitle {
+.box_login .authTitle, .box_register .authTitle {
     text-align: center;
     line-height: 300%;
     background-color: #00796b;
@@ -713,30 +752,30 @@ h1.pretAnunt span {
     color: #dae8e7;
 }
 
-.box_login .omb_socialButtons, .box_register .omb_socialButtons {
+.box_login .socialButtons, .box_register .socialButtons {
     margin: auto;
     margin-top: 25px;
     width: 100%;
 }
     
-.box_login .omb_socialButtons a, .box_register .omb_socialButtons a {
+.box_login .socialButtons a, .box_register .socialButtons a {
     font-weight: bold;
     color: white;
     opacity:0.9;
 }
-.box_login .omb_socialButtons a:hover, .box_register .omb_socialButtons a:hover {
+.box_login .socialButtons a:hover, .box_register .socialButtons a:hover {
     color: white;
     opacity:1;      
 }
-.box_login .omb_socialButtons .omb_btn-facebook, .box_register .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
-.box_login .omb_socialButtons .omb_btn-twitter, .box_register .omb_socialButtons .omb_btn-twitter {background: #00aced;}
-.box_login .omb_socialButtons .omb_btn-google, .box_register .omb_socialButtons .omb_btn-google {background: #c32f10;}
+.box_login .socialButtons .btn-facebook, .box_register .socialButtons .btn-facebook {background: #3b5998;}
+.box_login .socialButtons .btn-twitter, .box_register .socialButtons .btn-twitter {background: #00aced;}
+.box_login .socialButtons .btn-google, .box_register .socialButtons .btn-google {background: #c32f10;}
 
 .box_login .text_login, .box_register .text_login {
     color: #dae8e7;
 }
 
-.box_login .omb_loginOr, .box_register .omb_loginOr {
+.box_login .loginOr, .box_register .loginOr {
     position: relative;
     font-size: 1.5em;
     font-weight: 300;
@@ -746,13 +785,13 @@ h1.pretAnunt span {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
-.box_login .omb_loginOr .omb_hrOr, .box_register .omb_loginOr .omb_hrOr {
+.box_login .loginOr .hrOr, .box_register .loginOr .hrOr {
     background-color: #cdcdcd;
     height: 1px;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
-.box_login .omb_loginOr .omb_spanOr, .box_register .omb_loginOr .omb_spanOr {
+.box_login .loginOr .spanOr, .box_register .loginOr .spanOr {
     display: block;
     position: absolute;
     left: 50%;
@@ -768,7 +807,7 @@ h1.pretAnunt span {
     margin-right: 10px;
 }
 
-.box_login .omb_loginForm .input-group.i, .box_register .omb_loginForm .input-group.i {
+.box_login .loginForm .input-group.i, .box_register .loginForm .input-group.i {
     width: 2em;
 }
 
@@ -813,7 +852,7 @@ h1.pretAnunt span {
         margin-left: 30px;
     }
 
-    .omb_forgotPwd {
+    .forgotPwd {
         text-align: right;
         margin-top:10px;
     }
@@ -866,7 +905,7 @@ h1.pretAnunt span {
         width: 90%;
         font-size: 12px;
     }
-    .box_login .omb_authTitle, .box_register .omb_authTitle {
+    .box_login .authTitle, .box_register .authTitle {
         text-align: center;
         line-height: 150%;
         border-top-left-radius: 10px;
@@ -895,6 +934,14 @@ h1.pretAnunt span {
     .padding-right-0 {
         padding-left: 0;
 
+    }
+    .legendTitle span {
+        font-size: 14px;
+    }
+
+    .legendTitle .legend {
+        width: 12px;
+        height: 12px;
     }
 }
 

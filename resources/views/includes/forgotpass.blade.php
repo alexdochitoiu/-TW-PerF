@@ -6,10 +6,10 @@
         <div class="modal-content ">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title" align="center">Reseteaza parola</h3>
+                <h3 class="modal-title">Reseteaza parola</h3>
             </div>
             <div class="modal-body bg-style">
-                <form class="form-horizontal" role="form" method="post" action="#">
+                <form class="form-horizontal" method="post" action="#">
                     <div class="form-group">
                     <h5 class="forgotPassInfo">Introdu adresa de e-mail pentru resetarea parolei contului.</h5>
                     </div>

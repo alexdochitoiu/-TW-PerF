@@ -7,38 +7,38 @@
 @section('content')
     <div class="container">
         <div class="box_login">
-            <h3 class="omb_authTitle">Autentificare pe cont PerF</h3>
-            <div class="row omb_socialButtons">
+            <h3 class="authTitle">Autentificare pe cont PerF</h3>
+            <div class="row socialButtons">
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+                    <a href="#" class="btn btn-lg btn-block btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
                         <span class="hidden-xs">Facebook</span>
                     </a>
                 </div>
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+                    <a href="#" class="btn btn-lg btn-block btn-twitter">
                         <i class="fa fa-twitter visible-xs"></i>
                         <span class="hidden-xs">Twitter</span>
                     </a>
                 </div>  
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block omb_btn-google">
+                    <a href="#" class="btn btn-lg btn-block btn-google">
                         <i class="fa fa-google-plus visible-xs"></i>
                         <span class="hidden-xs">Google +</span>
                     </a>
                 </div>  
             </div>
 
-            <div class="row omb_loginOr">
+            <div class="row loginOr">
                 <div class="col-xs-12 col-sm-12">
-                    <hr class="omb_hrOr">
-                    <span class="omb_spanOr">sau</span>
+                    <hr class="hrOr">
+                    <span class="spanOr">sau</span>
                 </div>
             </div>
 
             <div class="row form_align">
                 <div class="col-xs-12 col-sm-10">    
-                    <form class="omb_loginForm" autocomplete="off" method="POST">
+                    <form class="loginForm" autocomplete="off" method="POST">
                          <h4 class="text_login">Nume Cont / Email:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -55,7 +55,7 @@
                             </label>
                         </div>
                         <div class="col-xs-12 col-md-6">
-                            <p class="omb_forgotPwd">
+                            <p class="forgotPwd">
                                 <a href="#" data-toggle="modal" data-target="#modalResetPass">Ati uitat parola?</a>
                             </p>
                         </div>  
@@ -67,7 +67,7 @@
         </div>
         <div class="question_register">
             <h3 class="title"> Nu aveti un cont pe PerF?</h3>
-            <hr class="omb_hrOr">
+            <hr class="hrOr">
             <a href="/inregistrare" class="btn btn-lg btn-primary btn-block btn_costum">Creati un cont nou</a>
         </div>
         @include('includes.forgotpass')

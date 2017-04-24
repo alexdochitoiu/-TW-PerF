@@ -5,14 +5,8 @@
 @endsection
 
 @section('content')
-    <style>
-        footer {
-            visibility: hidden;
-            margin: 0;
-        }
-    </style>
-    <div class="col-sm-12 col-xs-12 text-center">
 
+    <div class="col-sm-12 col-xs-12 text-center" style=" min-height: 800px;">
         <div class="col-xs-12 col-sm-3 text-center " style="padding-top: 40px;">
             <h4>Articole in acesta pagina</h4>
             <ul class="help-menu " style="padding-left:0px;">
@@ -73,13 +67,14 @@
                 <p class="padding-10">-foloseste mesageria interna Perf pentru a comunica</p>
                 <p class="padding-10">- pastreaza un numar de telefon al cumparatorului pana faci vanzarea efectiva</p>
                 datele de card, buletin, alte acte si documente sunt private si nu exista motiv pentru care cineva
-                    sa ti le ceara. Cel putin noi nu am intalnit :)</p>
+                    sa ti le ceara. Cel putin noi nu am intalnit :)
                 <p >Pana descoperim lumea perfecta, daca se intampla vreo neplacere, iata ce solutii ai.</p>
 
             </div>
             <div id="securitate" class="padding-10 help-info display-search text-left">
                 <h4 class="help-info">Sfaturi pentru securitate</h4>
-                <ul>Iată cateva lucruri pe care le poți face pentru a-ți păstra contul în siguranță:
+                Iată cateva lucruri pe care le poți face pentru a-ți păstra contul în siguranță:
+                <ul>
                     <li>1.Protejează-ți parola:</li>
                     <li class="padding-10">-Nu folosi parola Perf nicăieri în altă parte pe Internet.</li>
                     <li class="padding-10">-Nu dezvălui niciodată parola. Ar trebui să fii singura persoană care o
@@ -106,4 +101,6 @@
         </div>
 
     </div>
+
+    <div class="clearfix"></div>
 @endsection

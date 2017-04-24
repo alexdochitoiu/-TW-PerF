@@ -69,9 +69,16 @@
                 </div>
 
                 <hr >
+
                 <div class="map" id="map"> </div>
-
-
+                <div id="location"><img src="images/location_pin.png" alt="marker"></div>
+                <hr>
+                <div class="col-sm-12 col-xs-12 legendTitle">
+                    <h3> <img src="images/map-legend.png" alt=""> Legenda</h3>
+                    <div class="col-sm-12 col-xs-12">  <span class="display-inline font-size-20px"> <div style="background-color: red; margin-right: 12px;" class="legend  display-inline"></div>Zona cu poluare fonica ridicata</span></div>
+                    <div class="col-sm-12 col-xs-12"> <span class="display-inline font-size-20px"><div style="background-color: green; margin-right: 12px;" class="legend  display-inline"></div>Zona cu aer curat</span></div>
+                    <div class="col-sm-12 col-xs-12"> <span class="display-inline font-size-20px"><div style="background-color: black; margin-right: 12px;" class="legend display-inline"></div>Zona periculoasa cu cetateni de etnii diferite</span></div>
+                </div>
             </div>
             <div class="col-sm-3 col-xs-9 contactForm">
                 <div class="title">

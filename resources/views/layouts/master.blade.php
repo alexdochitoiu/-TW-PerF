@@ -7,7 +7,6 @@
 
     <title>@yield('title')</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.4.0/ol.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -37,8 +36,12 @@
     <!-- UI JS file -->
     <script src="gallery/photoswipe-ui-default.min.js"></script>
 
-    <link rel="icon" href="images/icon.png" type="image/png"/>
+    <!-- Open Layers JS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.2.0/ol.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.2.0/ol.min.js" type="text/javascript"></script>
 
+    <link rel="icon" href="images/icon.png" type="image/png"/>
+    @yield('head')
 </head>
 <body>
 <div class="header-desktop-normal color-header no-on-mobile">
@@ -51,9 +54,9 @@
                 <div class="menu-desktop">
                     <div class="header-information">
                         <ul class="menu-normal-information line-height-header">
-                            <a href="/autentificare">Autentificare</a>
-                            <a href="/inregistrare">Creare cont</a>
-                            <a href="/ajutor">Ajutor</a>
+                            <li><a href="/autentificare">Autentificare</a></li>
+                            <li><a href="/inregistrare">Creare cont</a></li>
+                            <li><a href="/ajutor">Ajutor</a></li>
                         </ul>
 
                     </div>
@@ -104,9 +107,9 @@
 <script src="{{asset('js/perf.js')}}"></script>
 <footer class="color-header">
     <h4> Ne puteti urmari pe: </h4>
-    <a href="http://www.facebook.com/"><img src="images/facebook.png" /></a>
-    <a href="http://www.google.com/"><img src="images/googleplus.png" /></a>
-    <a href="http://www.twitter.com/"><img src="images/twitter.png" /></a>
+    <a href="http://www.facebook.com/"><img src="images/facebook.png" alt="fb"/></a>
+    <a href="http://www.google.com/"><img src="images/googleplus.png" alt="google"/></a>
+    <a href="http://www.twitter.com/"><img src="images/twitter.png" alt="twitter"/></a>
     <br>
     <span>PerF &copy; 2017</span>
 </footer>
