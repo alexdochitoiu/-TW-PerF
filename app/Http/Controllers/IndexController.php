@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $anunturi = 30;
-        $i=0;
-        return view('pages.index')->withAnunturi($anunturi)->withI($i);
+        $anunturi = DB::table('anunturi')
+                    ->join('users', 'users.id', '=', 'anunturi.idUser')
+                    ->select('users.firstName', 'users.lastName', 'anunturi.*')
+                    ->get();
+        return view('pages.index')
+            ->with('anunturi', $anunturi);
     }
 }

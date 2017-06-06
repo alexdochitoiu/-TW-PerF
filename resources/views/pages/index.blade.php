@@ -155,20 +155,19 @@
             </div>
         </div>
         <div class="row">
-        @while($i <= $anunturi)
-            <?php $i++; ?>
+        @foreach($anunturi as $anunt)
                 <div class="col-xs-6 col-sm-4">
                     <a href="/anunt" >
                     <div class="announcement">
-                        <div> <span>PRET</span> 576 RON</div>
+                        <div> <span>PRET</span> {{$anunt->pret}} RON</div>
                         <img src="images/house.jpg" alt="house"/>
-                        <p id="title"> Aici va fi pus un titlu. Dar la timpul potrivit...</p>
-                        <p id="uploadedBy">Adaugat de Ion Gheorghita</p>
-                        <p id="timeAdded">12:45 PM  22.03.2017</p>
+                        <p id="title"> {{$anunt->titlu}}</p>
+                        <p id="uploadedBy">Adaugat de {{$anunt->firstName}} {{$anunt->lastName}}</p>
+                        <p id="timeAdded">{{$anunt->dataPublicare}}</p>
                     </div>
                     </a>
                 </div>
-            @endwhile
+            @endforeach
         </div>
     </div>
     @endsection
