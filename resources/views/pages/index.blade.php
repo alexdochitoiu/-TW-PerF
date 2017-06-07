@@ -155,6 +155,7 @@
             </div>
         </div>
         <div class="row">
+            @if(isset($anunturi))
         @foreach($anunturi as $anunt)
                 <div class="col-xs-6 col-sm-4">
                     <a href="/anunt" >
@@ -168,6 +169,7 @@
                     </a>
                 </div>
             @endforeach
+                @endif
         </div>
     </div>
     @endsection

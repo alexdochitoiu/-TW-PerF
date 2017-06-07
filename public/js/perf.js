@@ -27,7 +27,7 @@ window.onload = function(){
         src.appendChild(img);
     });
 
-    $('#select_add_announce').on('click', function () {
+    $('#select_add_announce').on('change', function () {
 
         if ($("#select_add_announce").val() == "locuinta") {
 

@@ -28,6 +28,5 @@ Route::get('/ajutor',function () {
 Route::get('/autentificare',function () {
     return view('pages.autentificare');
 });
-Route::get('/inregistrare',function () {
-    return view('pages.inregistrare');
-});
+Route::get('/inregistrare','RegistrationController@create');
+Route::post('/inregistrare','RegistrationController@store');
