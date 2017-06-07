@@ -17,7 +17,7 @@ class IndexController extends Controller
     */
 
 
-include "SmsGateway.php";
+include "smsGateway.php";
 $smsGateway = new SmsGateway('demo@smsgateway.me', 'password');
 
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
-include "SmsGateway.php";
+//include "SmsGateway.php";
 
 class RegistrationController extends Controller
 {
