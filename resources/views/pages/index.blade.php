@@ -170,6 +170,7 @@
                 </div>
             @endforeach
                 @endif
+            <a href="/logout"><h1>Log out</h1></a>
         </div>
     </div>
     @endsection

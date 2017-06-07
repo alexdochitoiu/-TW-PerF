@@ -80,6 +80,10 @@
                                     <input type="password" class="form-control" name="confirm-password"
                                            placeholder="Confirma Parola" required>
                                 </div>
+                                @if(!empty($errors->confirm_password))
+                                    <h4 style="color:red"><i class="fa fa-hand-o-up"
+                                                             aria-hidden="true"></i>{{' '.$errors->confirm_password}}</h4>
+                                @endif
                                 <label class="checkbox text_login">
                                     <input type="checkbox" value="termeni-si-conditii" required>Termeni si Conditii
                                 </label>

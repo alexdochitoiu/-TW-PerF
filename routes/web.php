@@ -25,8 +25,12 @@ Route::get('/ajutor',function () {
 
 });
 
-Route::get('/autentificare',function () {
-    return view('pages.autentificare');
-});
+Route::get('/autentificare','SessionsController@create');
+Route::post('/autentificare','SessionsController@store');
 Route::get('/inregistrare','RegistrationController@create');
 Route::post('/inregistrare','RegistrationController@store');
+Route::get('/logout','SessionsController@destroy');
+
+
+
+Route::get('/home', 'HomeController@index');

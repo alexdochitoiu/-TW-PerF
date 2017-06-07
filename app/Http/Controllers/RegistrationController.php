@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
-//include "SmsGateway.php";
+include "SmsGateway.php";
 
 class RegistrationController extends Controller
 {
@@ -35,6 +36,10 @@ class RegistrationController extends Controller
         if(!((strlen(request('phone_number'))==10) and is_numeric(request('phone_number')))) {
             $error["phone_number"] ='numar incorect !';
 
+            $oke=1;
+        }
+        if(request('password')!==request('confirm-password')) {
+            $error["confirm_password"]='confirmarea parolei incorecta';
             $oke=1;
         }
      if($oke==1) {
@@ -67,7 +72,7 @@ class RegistrationController extends Controller
         $smsGateway = new SmsGateway('miron.gabriel2015@gmail.com', 'miron1234');
         $deviceID = 50133;
         $number = '+4'.request('phone_number');
-        $message = 'Va multumim pentru alegerea serviciilor noastre , va informam ca, contul dumneavoastra este in siguranta , Echipa Perf';
+        $message = 'Domnule/Doamna '.$user->name .' va multumim pentru alegerea serviciilor noastre , va informam ca  contul dumneavoastra este in siguranta , Echipa Perf';
 
         $options = [
             'send_at' => strtotime('+0 minutes'), // Send the message in 10 minutes
