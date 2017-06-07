@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', 'IndexController@index');
 Route::get('/anunt', function () {
     return view('pages.anunt');
@@ -31,3 +30,7 @@ Route::get('/autentificare',function () {
 Route::get('/inregistrare',function () {
     return view('pages.inregistrare');
 });
+
+Route::post('/inregistrare', [
+    'uses' => 'UserController@register',
+    'as' => 'register']);

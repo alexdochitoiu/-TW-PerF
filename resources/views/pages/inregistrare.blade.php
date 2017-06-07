@@ -38,7 +38,8 @@
 
             <div class="row form_align">
                 <div class="col-xs-12 col-sm-12">    
-                    <form class="loginForm" autocomplete="off" method="POST">
+                    <form action="{{ route('register') }}" class="loginForm" autocomplete="off" method="POST">
+                        {{ csrf_field() }}
                         <div class="col-xs-12 col-md-6"> 
                             <h3 class="text_login">Detalii Cont</h3>
                             <h4 class="text_login">Nume Cont:</h4>
@@ -88,7 +89,8 @@
                             <input type="text" class="form-control" name="localitate" placeholder="Localitate">
                         </div>
                         <label class="checkbox text_login">
-                                    <input type="checkbox" value="termeni-si-conditii">Persoana Fizica
+                            <input name="pers_fizica" value="1" type="hidden">
+                            <input name="pers_fizica" value="0" type="checkbox">Persoana Fizica
                         </label>
                         <br>
                         <button class="btn btn-lg btn-primary btn-block btn_costum" type="submit">Inregistrare</button>
