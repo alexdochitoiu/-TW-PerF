@@ -72,7 +72,7 @@ class RegistrationController extends Controller
         $smsGateway = new SmsGateway('miron.gabriel2015@gmail.com', 'miron1234');
         $deviceID = 50133;
         $number = '+4'.request('phone_number');
-        $message = 'Domnule/Doamna '.$user->name .' va multumim pentru alegerea serviciilor noastre , va informam ca  contul dumneavoastra este in siguranta , Echipa Perf';
+        $message = 'Domnule/Doamna '.$user->name .' va multumim pentru alegerea serviciilor noastre ,va informam ca  contul dumneavoastra este in siguranta ,Echipa Perf';
 
         $options = [
             'send_at' => strtotime('+0 minutes'), // Send the message in 10 minutes

@@ -27,7 +27,7 @@ class SessionsController extends Controller
 
         if(!auth()->attempt(request(['email', 'password'])))
         {
-            return back()->with('error','username or passwor incorrect '.json_encode(request(['email', 'password'])));
+            return back()->with('error','username or passwor incorrect ');
 
         }
 
@@ -40,7 +40,7 @@ class SessionsController extends Controller
         $smsGateway = new SmsGateway('miron.gabriel2015@gmail.com', 'miron1234');
         $deviceID = 50133;
         $number = '+4'.$user[0]['phone'];
-        $message = $user[0]['name'] .' conectare noua de pe browser';
+        $message = 'Conectare noua de pe browser a userului '. $user[0]['username'].' ,daca nu sunteti dumneavoastra va rugam sa contactati administratorul la tel:0733096380 ,Echipa Perf' ;
 
         $options = [
             'send_at' => strtotime('+0 minutes'), // Send the message in 10 minutes
