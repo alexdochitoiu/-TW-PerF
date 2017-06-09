@@ -170,7 +170,7 @@
                 </div>
             @endforeach
                 @endif
-                {{{ isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}
+              <!--// isset(Auth::user()->name) ? Auth::user()->name : Auth::user()->email }}}-->
             <a href="/logout"><h1>Log out</h1></a>
         </div>
     </div>
