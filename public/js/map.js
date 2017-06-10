@@ -1,6 +1,8 @@
 var map;
 
 $(document).ready(function() {
+
+	var marker;
 	//Apelam prima data geoLocation pentru a afla coordonatele clientului
 	geoLocationInit();
 
@@ -42,18 +44,19 @@ $(document).ready(function() {
         	zoom: 16,
         	center: clientPos,
         });
-
+		getCoordsAfterClick();
         createMarkList(clientPos, "school");
 	}
 
 	//Create marker
 	function createMarker(latLng, icn, name) {
-		var marker = new google.maps.Marker({
+		var newMarker = new google.maps.Marker({
     			position: latLng,
     			map: map,
     			icon: icn,
     			title: name
   			});
+		marker = newMarker;
 	}
 
 	//Create mark List(cu imobilele din BD)
@@ -76,11 +79,28 @@ $(document).ready(function() {
    					latLng = place.geometry.location;
    					icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
    					name = place.name;
-
+   					console.log(latLng);
        				createMarker(latLng, icn, name);
      			}
   			}
 		}
+	}
+
+	//Coords after click(pentru "adauga anunt")
+	function getCoordsAfterClick() {
+		google.maps.event.addListener(map, "click", function(event) {
+    		//console.log(marker);
+    		marker.setMap(null);
+    		var lat = event.latLng.lat();
+    		var lng = event.latLng.lng();
+    		
+    		var latLng = new google.maps.LatLng(lat, lng);
+    		icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
+    		name = "Noul dumneavoastra anunt.";
+    		createMarker(latLng, icn, name);
+    		
+    		console.log("Lat=" + lat + "; Lng=" + lng);
+		});
 	}
 
 });
