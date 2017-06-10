@@ -1,8 +1,10 @@
 var map;
+var adaugaAnunt = document.getElementById('adaugaAnunt');
 
 $(document).ready(function() {
 
 	var marker;
+	var layer;
 	//Apelam prima data geoLocation pentru a afla coordonatele clientului
 	geoLocationInit();
 
@@ -44,8 +46,14 @@ $(document).ready(function() {
         	zoom: 16,
         	center: clientPos,
         });
-		getCoordsAfterClick();
-        createMarkList(clientPos, "school");
+
+        if(adaugaAnunt)
+			getCoordsAfterClick();
+		else {
+			createMarkList(clientPos, "school");
+			createLayers();
+			
+		}
 	}
 
 	//Create marker
@@ -57,6 +65,8 @@ $(document).ready(function() {
     			title: name
   			});
 		marker = newMarker;
+		if(adaugaAnunt == null)
+			popupInfoMarker(marker);
 	}
 
 	//Create mark List(cu imobilele din BD)
@@ -79,8 +89,9 @@ $(document).ready(function() {
    					latLng = place.geometry.location;
    					icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
    					name = place.name;
-   					console.log(latLng);
+   					//console.log(latLng);
        				createMarker(latLng, icn, name);
+       				marker = null;
      			}
   			}
 		}
@@ -89,8 +100,9 @@ $(document).ready(function() {
 	//Coords after click(pentru "adauga anunt")
 	function getCoordsAfterClick() {
 		google.maps.event.addListener(map, "click", function(event) {
-    		//console.log(marker);
-    		marker.setMap(null);
+    		console.log(marker);
+    		if(marker != null)
+    			marker.setMap(null);
     		var lat = event.latLng.lat();
     		var lng = event.latLng.lng();
     		
@@ -99,8 +111,31 @@ $(document).ready(function() {
     		name = "Noul dumneavoastra anunt.";
     		createMarker(latLng, icn, name);
     		
-    		console.log("Lat=" + lat + "; Lng=" + lng);
+    		//console.log("Lat=" + lat + "; Lng=" + lng);
 		});
 	}
 
+	function popupInfoMarker(marker) {
+		var contentString = 'Informatii Imobil';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+    }
+
+    function createLayers() {
+    	layer = [
+    		{lat: 47.151726, lng: 27.587914},
+    		{lat: 47.152726, lng: 27.588914},
+    		{lat: 47.152726, lng: 27.587914},
+    		{lat: 47.151726, lng: 27.586914}
+ 		];
+ 		map.data.add({geometry: new google.maps.Data.Polygon([
+			layer
+		])});
+    }
 });
