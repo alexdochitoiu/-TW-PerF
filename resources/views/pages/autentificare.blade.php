@@ -27,7 +27,7 @@
                     </a>
                 </div>  
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block btn-google">
+                    <a href="/autentificare/google" class="btn btn-lg btn-block btn-google">
                         <i class="fa fa-google-plus visible-xs"></i>
                         <span class="hidden-xs">Google +</span>
                     </a>

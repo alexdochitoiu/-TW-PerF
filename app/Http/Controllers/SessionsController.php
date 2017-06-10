@@ -76,7 +76,7 @@ class SessionsController extends Controller
             $row->date = new Carbon($row->date);
             return $row;
         });
-        if()
+
         $user = $user->toArray();
 
 
@@ -87,9 +87,9 @@ class SessionsController extends Controller
 
     }
 
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -97,10 +97,10 @@ class SessionsController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
 
     {
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::driver($provider)->user();
         $this->login_with_email($user->getEmail());
         return redirect('/');
 

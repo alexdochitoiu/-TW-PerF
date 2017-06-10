@@ -30,6 +30,6 @@ Route::post('/autentificare','SessionsController@store');
 Route::get('/inregistrare','RegistrationController@create');
 Route::post('/inregistrare','RegistrationController@store');
 Route::get('/logout','SessionsController@destroy');
-Route::get('/autentificare/facebook', 'SessionsController@redirectToProvider');
-Route::get('/autentificare/facebook/callback', 'SessionsController@handleProviderCallback');
+Route::get('/autentificare/{provider}', 'SessionsController@redirectToProvider');
+Route::get('/autentificare/{provider}/callback', 'SessionsController@handleProviderCallback');
 
