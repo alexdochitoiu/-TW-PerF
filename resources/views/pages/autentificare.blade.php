@@ -21,7 +21,7 @@
                     </a>
                 </div>
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block btn-twitter">
+                    <a href="/autentificare/twitter" class="btn btn-lg btn-block btn-twitter">
                         <i class="fa fa-twitter visible-xs"></i>
                         <span class="hidden-xs">Twitter</span>
                     </a>
