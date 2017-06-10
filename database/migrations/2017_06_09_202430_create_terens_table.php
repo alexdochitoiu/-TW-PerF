@@ -14,7 +14,7 @@ class CreateTerensTable extends Migration
     public function up()
     {
         Schema::create('terenuri', function (Blueprint $table) {
-            $table->string('id');
+            $table->increments('id');
             $table->string('tip');
             $table->integer('suprafata');
             $table->string('localitate');
@@ -25,9 +25,6 @@ class CreateTerensTable extends Migration
             $table->boolean('apa');
             $table->boolean('canalizare');
             $table->boolean('irigatie');
-        });
-        Schema::table('terenuri', function(Blueprint $table) {
-            $table->foreign('id')->references('id')->on('imobils');
         });
     }
 

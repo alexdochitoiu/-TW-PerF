@@ -13,7 +13,7 @@ class CreateImaginesTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagines', function (Blueprint $table) {
+        Schema::create('imagini', function (Blueprint $table) {
             $table->increments('id');
             $table->blob('imagine1');
             $table->blob('imagine2');
@@ -33,6 +33,6 @@ class CreateImaginesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imagines');
+        Schema::dropIfExists('imagini');
     }
 }

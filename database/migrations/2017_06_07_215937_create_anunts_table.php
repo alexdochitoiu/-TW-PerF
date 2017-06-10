@@ -16,7 +16,8 @@ class CreateAnuntsTable extends Migration
         Schema::create('anunturi', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
-            $table->string('id_imobil');
+            $table->tinyInteger('tipImobil'); //0-Terenuri, 1-Birouri, 2-Locuinte
+            $table->integer('id_imobil');
             $table->integer('id_imagine')->unsigned();
             $table->string('titlu');
             $table->string('descriere', 2500);
@@ -30,7 +31,7 @@ class CreateAnuntsTable extends Migration
 
         Schema::table('anunturi', function(Blueprint $table) {
             $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_imobil')->references('id')->on('imobils');
+            $table->foreign('id_imagine')->references('id')->on('imagines');
         });
     }
 
