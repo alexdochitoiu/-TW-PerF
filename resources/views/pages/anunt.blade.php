@@ -70,8 +70,9 @@
 
                 <hr >
 
-                <div class="map" id="map"> </div>
-                <div id="location"><img src="images/location_pin.png" alt="marker"></div>
+                <div class="map" id="map">
+                    
+                </div>
                 <hr>
                 <div class="col-sm-12 col-xs-12 legendTitle">
                     <h3> <img src="images/map-legend.png" alt=""> Legenda</h3>

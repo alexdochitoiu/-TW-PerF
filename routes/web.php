@@ -37,3 +37,7 @@ Route::get('/logout','SessionsController@destroy');
 Route::get('/autentificare/{provider}', 'SessionsController@redirectToProvider');
 Route::get('/autentificare/{provider}/callback', 'SessionsController@handleProviderCallback');
 
+Route::post('/adauga_anunt', [
+        'uses' => 'AnuntController@postCreateAnunt',
+        'as' => 'adauga.anunt'
+    ]);

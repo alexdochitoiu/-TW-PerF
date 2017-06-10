@@ -45,7 +45,7 @@ class SessionsController extends Controller
     {
 
         if (!auth()->attempt(request(['email', 'password']))) {
-            return back()->with('error', 'username or passwor incorrect ');
+            return back()->with('error', 'username or password incorrect ');
 
         }
 
