@@ -163,8 +163,8 @@
                         <div> <span>PRET</span> {{$anunt->pret}} RON</div>
                         <img src="images/house.jpg" alt="house"/>
                         <p id="title"> {{$anunt->titlu}}</p>
-                        <p id="uploadedBy">Adaugat de {{$anunt->firstName}} {{$anunt->lastName}}</p>
-                        <p id="timeAdded">{{$anunt->dataPublicare}}</p>
+                        <p id="uploadedBy">Adaugat de {{$anunt->name}}</p>
+                        <p id="timeAdded">{{$anunt->created_at}}</p>
                     </div>
                     </a>
                 </div>
