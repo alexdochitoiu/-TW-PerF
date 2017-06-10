@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/perf.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/ol.css')}}">
     <!-- Core CSS file -->
     <link rel="stylesheet" href="gallery/photoswipe.css">
 
@@ -35,10 +34,6 @@
 
     <!-- UI JS file -->
     <script src="gallery/photoswipe-ui-default.min.js"></script>
-
-    <!-- Open Layers JS file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.2.0/ol.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.2.0/ol.min.js" type="text/javascript"></script>
 
     <link rel="icon" href="images/icon.png" type="image/png"/>
     @yield('head')
@@ -105,6 +100,8 @@
 
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/perf.js')}}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4I2IoUwC6L837NGs5_UbcoEdNclreww&libraries=places"></script>
+<script src="{{ asset('js/map.js') }}"></script>
 <footer class="color-header">
     <h4> Ne puteti urmari pe: </h4>
     <a href="http://www.facebook.com/"><img src="../images/facebook.png" alt="fb"/></a>
@@ -115,3 +112,5 @@
 </footer>
 </body>
 </html>
+
+
