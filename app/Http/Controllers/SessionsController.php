@@ -77,6 +77,13 @@ class SessionsController extends Controller
             return $row;
         });
 
+        if(isset($user->email)) {
+            auth()->login($user[0]);
+        }
+        else {
+            return  0;
+        }
+
         $user = $user->toArray();
 
 
@@ -101,8 +108,12 @@ class SessionsController extends Controller
 
     {
         $user = Socialite::driver($provider)->user();
-        $this->login_with_email($user->getEmail());
-        return redirect('/');
+        if($this->login_with_email($user->getEmail()))
+        {
+        return redirect('/');}
+        else {
+        return back()->with('error', 'nu exista acest user sau conexiunea pe '.$provider.' nu se poate stabili ');
+    }
 
         // $user->token;
     }

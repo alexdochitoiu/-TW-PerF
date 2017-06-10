@@ -846,6 +846,45 @@ h1.pretAnunt span {
     width: 70%;
     margin: auto;
 }
+.hover_contul_meu {
+    position:relative;
+}
+.contul_meu {
+    padding-top:10px;
+    display:none;
+    background-color: #00796b;
+    color:white;
+    width:100%;
+    font-size:12px;
+}
+.contul_meu>a>i {
+    padding:0 5px 0 0;
+}
+.contul_meu>a {
+
+    background-color: #00796b;
+    color:white;
+    padding:5px 15px;
+    display:block;
+    z-index: 4;
+}
+.contul_meu>a:hover {
+
+
+    color:white;
+    background-color:#438e87;
+    transition:1s;
+}
+
+.hover_contul_meu:hover {
+    background-color: #00796b;
+}
+ .hover_contul_meu:hover> .contul_meu {
+    display:block;
+     position:absolute;
+     z-index:20;
+
+}
 
 @media (min-width: 993px) {
     .box_login {

@@ -18,7 +18,10 @@ Route::get('/anunt', function () {
 });
 
 Route::get('/adauga_anunt',function () {
-    return view('pages.adauga_anunt');
+    if($user=Auth::user()){
+        return view('pages.adauga_anunt');
+    }
+    else return redirect('/autentificare');
 });
 Route::get('/ajutor',function () {
     return view('pages.help');
