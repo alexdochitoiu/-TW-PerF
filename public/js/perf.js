@@ -255,6 +255,11 @@ window.onload = function(){
         ]),
     });
 
+    map.on('click', function(e) {
+        console.log(e.coordinate[0]);
+        console.log(e.coordinate[1]);
+    });
+
     // create an Overlay using the div with id location.
     var marker = new ol.Overlay({
         element: document.getElementById('location'),
@@ -285,6 +290,8 @@ window.onload = function(){
     });
 
 };
+
+//facebook
 
 $('#facebook').on('click',function () {
 
