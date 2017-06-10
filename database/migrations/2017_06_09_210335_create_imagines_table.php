@@ -15,14 +15,14 @@ class CreateImaginesTable extends Migration
     {
         Schema::create('imagini', function (Blueprint $table) {
             $table->increments('id');
-            $table->blob('imagine1');
-            $table->blob('imagine2');
-            $table->blob('imagine3');
-            $table->blob('imagine4');
-            $table->blob('imagine5');
-            $table->blob('imagine6');
-            $table->blob('imagine7');
-            $table->blob('imagine8');
+            $table->string('imagine1');
+            $table->string('imagine2');
+            $table->string('imagine3');
+            $table->string('imagine4');
+            $table->string('imagine5');
+            $table->string('imagine6');
+            $table->string('imagine7');
+            $table->string('imagine8');
         });
     }
 

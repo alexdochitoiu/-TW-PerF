@@ -29,7 +29,7 @@ window.onload = function(){
 
     $('#select_add_announce').on('change', function () {
 
-        if ($("#select_add_announce").val() == "locuinta") {
+        if ($("#select_add_announce").val() == "2") {
 
             $('#DivLocuintaID').removeClass('display-search');
 
@@ -37,7 +37,7 @@ window.onload = function(){
         else {
             $('#DivLocuintaID').addClass('display-search');
         }
-        if ($("#select_add_announce").val() == "birou") {
+        if ($("#select_add_announce").val() == "1") {
 
             $('#DivBirouID').removeClass('display-search');
         }
@@ -45,7 +45,7 @@ window.onload = function(){
             $('#DivBirouID').addClass('display-search');
         }
 
-        if ($("#select_add_announce").val() == "teren") {
+        if ($("#select_add_announce").val() == "0") {
 
             $('#DivTerenID').removeClass('display-search');
         }
