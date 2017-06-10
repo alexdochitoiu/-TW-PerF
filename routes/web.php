@@ -29,7 +29,7 @@ Route::get('/ajutor',function () {
 });
 
 Route::get('/autentificare','SessionsController@create');
-Route::post('/trimite_parola','Mail@send_mail');
+Route::post('/trimite_parola','SendMail@send_email');
 Route::post('/autentificare','SessionsController@store');
 Route::get('/inregistrare','RegistrationController@create');
 Route::post('/inregistrare','RegistrationController@store');
