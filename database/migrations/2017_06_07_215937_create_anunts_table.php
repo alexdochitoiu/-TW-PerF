@@ -28,11 +28,6 @@ class CreateAnuntsTable extends Migration
             $table->double('latitudine');
             $table->timestamps();
         });
-
-        Schema::table('anunturi', function(Blueprint $table) {
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_imagine')->references('id')->on('imagines');
-        });
     }
 
     /**
