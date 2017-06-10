@@ -15,9 +15,9 @@
             <h3 class="authTitle">Autentificare pe cont PerF</h3>
             <div class="row socialButtons">
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block btn-facebook">
+                    <a href="http://localhost:8000/autentificare/facebook" class="btn btn-lg btn-block btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
-                        <span class="hidden-xs">Facebook</span>
+                        <span id="facebook" class="hidden-xs">Facebook</span>
                     </a>
                 </div>
                 <div class="col-xs-4 col-sm-4">
@@ -27,7 +27,7 @@
                     </a>
                 </div>  
                 <div class="col-xs-4 col-sm-4">
-                    <a href="#" class="btn btn-lg btn-block btn-google">
+                    <a href="/autentificare/google" class="btn btn-lg btn-block btn-google">
                         <i class="fa fa-google-plus visible-xs"></i>
                         <span class="hidden-xs">Google +</span>
                     </a>
@@ -80,6 +80,8 @@
         </div>
 
         @include('includes.forgotpass')
+
     </div>
     </form>
+
 @endsection
