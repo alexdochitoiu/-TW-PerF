@@ -100,62 +100,13 @@
                                     placeholder="Pret (RON)"></label>
 
                         <h5 class="title_add_announce">Categorie</h5>
-                        <select id="select_add_announce"
+                        <select name="tipImobil" id="select_add_announce"
                                 class="form-control height-70px margin-8-0 font-size-20px border-radius-10 margin-bottom-10">
-                            <option value="locuinta">Locuinta</option>
-                            <option value="birou">Birou</option>
-                            <option value="teren">Teren</option>
+                            <option value="2">Locuinta</option>
+                            <option value="1">Birou</option>
+                            <option value="0">Teren</option>
                         </select>
-                    </div>
-                </div>
-                <div id="DivLocuintaID">
-                    <div class="col-sm-6 col-xs-12">
-                        <h5 class="title_add_announce">Suprafata</h5>
-                        <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
-                                                        placeholder="Suprafata(m2)"></label>
-                        <h5 class="title_add_announce">Tip proprietate</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Selecteaza...</option>
-                            <option>Casa</option>
-                            <option>Apartament</option>
-                            <option>Cabana</option>
-                            <option>Vila</option>
-                            <option>Casa cu mansarda</option>
-                            <option>Casa tip duplex</option>
 
-
-                        </select>
-                        <h5 class="title_add_announce">Localitate</h5>
-                        <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
-                                                        placeholder="Localitate"></label>
-                        <h5 class="title_add_announce">Zona</h5>
-                        <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
-                                                        placeholder="Zona"></label>
-                        <h5 class="title_add_announce">Orientare</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Selecteaza...</option>
-                            <option>Est</option>
-                            <option>Vest</option>
-                            <option>Nord</option>
-                            <option>Sud</option>
-                            <option>Nord-Est</option>
-                            <option>Nord-Vest</option>
-                            <option>Sud-Est</option>
-                            <option>Sud-Vest</option>
-
-                        </select>
-                        <h5 class="title_add_announce">Compartimentare</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Selecteaza...</option>
-                            <option>Decomandat</option>
-                            <option>Nedecomandat</option>
-                            <option>Semidecomandat</option>
-
-
-                        </select>
                         <h5 class="title_add_announce">Vanzare / Inchiriere</h5>
                         <select name="tipTranzactie" class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
                             <option value="Vanzare">Vanzare</option>
@@ -164,36 +115,86 @@
 
                         </select>
                     </div>
+                </div>
+                <div id="DivLocuintaID">
+                    <div class="col-sm-6 col-xs-12">
+                        <h5 class="title_add_announce">Suprafata</h5>
+                        <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
+                                                        maxlength="60" name="suprafataL" type="text" value=""
+                                                        placeholder="Suprafata (mp)"></label>
+                        <h5 class="title_add_announce">Tip proprietate</h5>
+                        <select name="tipL"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option>Selecteaza...</option>
+                            <option value="Casa">Casa</option>
+                            <option value="Apartament">Apartament</option>
+                            <option value="Cabana">Cabana</option>
+                            <option value="Vila">Vila</option>
+                            <option value="Casa cu mansarda">Casa cu mansarda</option>
+                            <option value="Casa tip duplex">Casa tip duplex</option>
+
+
+                        </select>
+                        <h5 class="title_add_announce">Localitate</h5>
+                        <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
+                                                        maxlength="60" name="localitateL" type="text" value=""
+                                                        placeholder="Localitate"></label>
+                        <h5 class="title_add_announce">Zona</h5>
+                        <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
+                                                        maxlength="60" name="zonaL" type="text" value=""
+                                                        placeholder="Zona"></label>
+                        <h5 class="title_add_announce">Orientare</h5>
+                        <select name="orientareL"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option>Selecteaza...</option>
+                            <option value="Est">Est</option>
+                            <option value="Vest">Vest</option>
+                            <option value="Nord">Nord</option>
+                            <option value="Sud">Sud</option>
+                            <option value="Nord-Est">Nord-Est</option>
+                            <option value="Nord-Vest">Nord-Vest</option>
+                            <option value="Sud-Est">Sud-Est</option>
+                            <option value="Sud-Vest">Sud-Vest</option>
+
+                        </select>
+                        <h5 class="title_add_announce">Compartimentare</h5>
+                        <select name="compartimentareL"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option>Selecteaza...</option>
+                            <option value="Decomandat">Decomandat</option>
+                            <option value="Nedecomandat">Nedecomandat</option>
+                            <option value="Semidecomandat">Semidecomandat</option>
+
+
+                        </select>
+
+                    </div>
                     <div class="col-sm-6 col-xs-12">
                         <h5 class="title_add_announce">An contructie</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="anConstructieL" type="text" value=""
                                                         placeholder="An constructie"></label>
                         <h5 class="title_add_announce">Etaj</h5>
                         <div class="col-sm-5 padding-left-0">
-                            <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
+                            <select name="etajL"
+                                    class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
                                 <option>Selecteaza...</option>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
 
                             </select>
                         </div>
@@ -201,74 +202,85 @@
                             <p style="color:white ; font-size:20px" class="text-center">din</p>
                         </div>
                         <div class="col-sm-5 padding-right-0">
-                            <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
+                            <select name="totalEtajeL"
+                                    class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
                                 <option>Selecteaza...</option>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
 
                             </select>
                         </div>
                         <h5 class="title_add_announce">Stare</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Nou</option>
-                            <option>Utilizat</option>
-                            <option>In constructie</option>
-                            <option>Renovat</option>
+                        <select name="stareL"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option value="Nou">Nou</option>
+                            <option value="Utilizat">Utilizat</option>
+                            <option value="In constructie">In constructie</option>
+                            <option value="Renovat">Renovat</option>
                         </select>
                         <h5 class="title_add_announce">Nr bai</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="numarBaiL" type="text" value=""
                                                         placeholder="Nr Bai"></label>
 
                         <h5 class="title_add_announce">Alte detalii</h5>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Balcon
+                            <input name="centralaTermL" value="0" type="hidden"/>
+                            <input name="centralaTermL" value="1" type="checkbox"> Centrala termica
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Gradina
+                            <input name="balconL" value="0" type="hidden"/>
+                            <input name="balconL" value="1" type="checkbox"> Balcon
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Lift
+                            <input name="gradinaL" value="0" type="hidden"/>
+                            <input name="gradinaL" value="1" type="checkbox"> Gradina
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Aer conditionat
+                            <input name="liftL" value="0" type="hidden"/>
+                            <input name="liftL" value="1" type="checkbox"> Lift
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Supravegheat video
+                            <input name="aerL" value="0" type="hidden"/>
+                            <input name="aerL" value="1" type="checkbox"> Aer conditionat
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Mobilat
+                            <input name="suprVideoL" value="0" type="hidden"/>
+                            <input name="suprVideoL" value="1" type="checkbox"> Supravegheat video
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Alarma
+                            <input name="mobilatL" value="0" type="hidden"/>
+                            <input name="mobilatL" value="1" type="checkbox"> Mobilat
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox">Usa blindata
+                            <input name="alarmaL" value="0" type="hidden"/>
+                            <input name="alarmaL" value="1" type="checkbox"> Alarma
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Detector Gaz
+                            <input name="usaBlindataL" value="0" type="hidden"/>
+                            <input name="usaBlindataL" value="1" type="checkbox">Usa blindata
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Parcare
+                            <input name="gazL" value="0" type="hidden"/>
+                            <input name="gazL" value="1" type="checkbox"> Detector Gaz
+                        </label>
+                        <label class="col-sm-6 col-xs-6 text-white">
+                            <input name="parcareL" value="0" type="hidden"/>
+                            <input name="parcareL" value="1" type="checkbox"> Parcare
                         </label>
                     </div>
                 </div>
@@ -276,54 +288,55 @@
                     <div class="col-sm-6 col-xs-12">
                         <h5 class="title_add_announce">Suprafata</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
-                                                        placeholder="Suprafata(m2)"></label>
+                                                        maxlength="60" name="suprafataT" type="text" value=""
+                                                        placeholder="Suprafata (mp)"></label>
                         <h5 class="title_add_announce">Tip</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Intravilan</option>
-                            <option>Extravilan</option>
+                        <select name="tipT" class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option value="Intravilan">Intravilan</option>
+                            <option value="Extravilan">Extravilan</option>
 
 
                         </select>
                         <h5 class="title_add_announce">Localitate</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="localitateT" type="text" value=""
                                                         placeholder="Localitate"></label>
 
 
                     </div>
                     <div class="col-sm-6 col-xs-12">
+
                         <h5 class="title_add_announce">Zona</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="zonaT" type="text" value=""
                                                         placeholder="Zona"></label>
+
                         <h5 class="title_add_announce">Vanzare / Inchiriere</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Selecteaza..</option>
-                            <option>Vanzare</option>
-                            <option>Inchiriere</option>
-
-
-                        </select>
 
                         <h5 class="title_add_announce">Alte detalii</h5>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Electricitate
+                            <input name="electricitateT" value="0" type="hidden">
+                            <input name="electricitateT" value="1" type="checkbox"> Electricitate
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Gaz
+                            <input name="gazT" value="0" type="hidden">
+                            <input name="gazT" value="1" type="checkbox"> Gaz
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Gard
+                            <input name="gardT" value="0" type="hidden">
+                            <input name="gardT" value="1" type="checkbox"> Gard
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Apa
+                            <input name="apaT" value="0" type="hidden">
+                            <input name="apaT" value="1" type="checkbox"> Apa
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Canalizare
+                            <input name="canalizareT" value="0" type="hidden">
+                            <input name="canalizareT" value="1" type="checkbox"> Canalizare
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Irigare
+                            <input name="irigatieT" value="0" type="hidden">
+                            <input name="irigatieT" value="1" type="checkbox"> Irigatie
                         </label>
 
                     </div>
@@ -332,43 +345,44 @@
                     <div class="col-sm-6 col-xs-12">
                         <h5 class="title_add_announce">Suprafata</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="suprafataB" type="text" value=""
                                                         placeholder="Suprafata(m2)"></label>
                         <h5 class="title_add_announce">Tip</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                        <select name="tipB"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
                             <option>Selecteaza...</option>
-                            <option>Singular</option>
-                            <option>Modular</option>
-
-
+                            <option value="Singular">Singular</option>
+                            <option value="Modular">Modular</option>
                         </select>
                         <h5 class="title_add_announce">Localitate</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="localitateB" type="text" value=""
                                                         placeholder="Localitate"></label>
                         <h5 class="title_add_announce">Zona</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="zonaB" type="text" value=""
                                                         placeholder="Zona"></label>
                         <h5 class="title_add_announce">Orientare</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                        <select name="orientareB"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
                             <option>Selecteaza...</option>
-                            <option>Est</option>
-                            <option>Vest</option>
-                            <option>Nord</option>
-                            <option>Sud</option>
-                            <option>Nord-Est</option>
-                            <option>Nord-Vest</option>
-                            <option>Sud-Est</option>
-                            <option>Sud-Vest</option>
+                            <option value="Est">Est</option>
+                            <option value="Vest">Vest</option>
+                            <option value="Nord">Nord</option>
+                            <option value="Sud">Sud</option>
+                            <option value="Nord-Est">Nord-Est</option>
+                            <option value="Nord-Vest">Nord-Vest</option>
+                            <option value="Sud-Est">Sud-Est</option>
+                            <option value="Sud-Vest">Sud-Vest</option>
 
                         </select>
                         <h5 class="title_add_announce">Compartimentare</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                        <select name="compartimentareB"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
                             <option>Selecteaza...</option>
-                            <option>Decomandat</option>
-                            <option>Nedecomandat</option>
-                            <option>Semidecomandat</option>
+                            <option value="Decomandat">Decomandat</option>
+                            <option value="Nedecomandat">Nedecomandat</option>
+                            <option value="Semidecomandat">Semidecomandat</option>
 
 
                         </select>
@@ -376,33 +390,29 @@
                     <div class="col-sm-6 col-xs-12">
                         <h5 class="title_add_announce">An constructie</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="anConstructieB" type="text" value=""
                                                         placeholder="An constructie"></label>
                         <h5 class="title_add_announce">Etaj</h5>
                         <div class="col-sm-5 padding-left-0">
-                            <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
+                            <select name="etajB"
+                                    class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
                                 <option>Selecteaza...</option>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
 
                             </select>
                         </div>
@@ -410,78 +420,87 @@
                             <p style="color:white ; font-size:20px" class="text-center">din</p>
                         </div>
                         <div class="col-sm-5 padding-right-0">
-                            <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
+                            <select name="totalEtajeB"
+                                    class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10 max-height-40px">
                                 <option>Selecteaza...</option>
-                                <option>0</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                <option>11</option>
-                                <option>12</option>
-                                <option>13</option>
-                                <option>14</option>
-                                <option>15</option>
-                                <option>16</option>
-                                <option>17</option>
-                                <option>18</option>
-                                <option>19</option>
-                                <option>20</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
 
                             </select>
                         </div>
                         <h5 class="title_add_announce">Locuri Parcare</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="locuriParcareB" type="text" value=""
                                                         placeholder="Locuri parcare"></label>
                         <h5 class="title_add_announce">Nr bai</h5>
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="numarBaiB" type="text" value=""
                                                         placeholder="Nr Bai"></label>
-                        <h5 class="title_add_announce">Vanzare / Inchiriere</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Selecteaza..</option>
-                            <option>Vanzare</option>
-                            <option>Inchiriere</option>
 
-
-                        </select>
                         <h5 class="title_add_announce">Alte detalii</h5>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Balcon
+                            <input name="balconB" value="0" type="hidden"/>
+                            <input name="balconB" value="1" type="checkbox"> Balcon
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Terasa
+                            <input name="terasaB" value="0" type="hidden"/>
+                            <input name="terasaB" value="1" type="checkbox"> Terasa
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Supravegheat video
+                            <input name="suprVideoB" value="0" type="hidden"/>
+                            <input name="suprVideoB" value="1" type="checkbox"> Supravegheat video
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Lift
+                            <input name="liftB" value="0" type="hidden"/>
+                            <input name="liftB" value="1" type="checkbox"> Lift
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Alarma
+                            <input name="alarmaB" value="0" type="hidden"/>
+                            <input name="alarmaB" value="1" type="checkbox"> Alarma
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Aer conditionat
+                            <input name="aerB" value="0" type="hidden"/>
+                            <input name="aerB" value="1" type="checkbox"> Aer conditionat
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Sala Sedinte
+                            <input name="sedinteB" value="0" type="hidden"/>
+                            <input name="sedinteB" value="1" type="checkbox"> Sala Sedinte
                         </label>
                         <label class="col-sm-6 col-xs-6 text-white">
-                            <input type="checkbox"> Receptie
+                            <input name="receptieB" value="0" type="hidden"/>
+                            <input name="receptieB" value="1" type="checkbox"> Receptie
                         </label>
                     </div>
                 </div>
 
 
                 <div id="add_announce_submit" class="col-sm-12 col-xs-12 padding-10 margin-bottom-30px">
+                    <h5 class="title_add_announce">Alegeti metoda de marcare pe harta:</h5>
+                    <select id="select_marker_method"
+                                class="form-control height-70px margin-8-0 font-size-20px border-radius-10 margin-bottom-10">
+                            <option value="map">Click pe harta - Daca nu va aflati in acest moment in imobilul pe care doriti sa-l vindeti/inchiriati</option>
+                            <option value="posActuala">Pozitia actuala - Daca va aflati in acest moment in imobilul pe care doriti sa-l vindeti/inchiriati</option>
+                        </select>
+                    <div id="mapSelected">
+                        <div class="map" id="map">
+                            <div id="adaugaAnunt">
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-12 col-xs-12 text-center">
                         <label class=" text-white  padding-10 display">
                             <input type="checkbox"> Sunt de acord cu termenii si conditiile
