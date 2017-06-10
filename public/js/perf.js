@@ -163,7 +163,7 @@ window.onload = function(){
     };
     $('#imgGallery').on('click', openPhotoSwipe);
 
-
+/*
     //MAP Scripts
     //
     // Holds the Polygon feature
@@ -283,6 +283,7 @@ window.onload = function(){
         console.log(p[0] + ' : ' + p[1]);
         view.setCenter([parseFloat(p[0]), parseFloat(p[1])]);
     });
+    */
 
 };
 
@@ -291,4 +292,14 @@ window.onload = function(){
         console.log(e.which);
         return (e.which !== 32 && (e.which <90));
 
+    });
+
+    $('#select_marker_method').on('change', function () {
+
+        if ($("#select_marker_method").val() == "posActuala") {
+            $('#mapSelected').addClass('display-search');
+        }
+        else {
+            $('#mapSelected').removeClass('display-search');
+        }
     });
