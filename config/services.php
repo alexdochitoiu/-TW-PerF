@@ -43,6 +43,12 @@ return [
         'client_id' => '100057349537-ebfarrv4et0ck2r637897pgi7ne02gus.apps.googleusercontent.com',
         'client_secret' => 'YU-i28bCMN83qV6aHQDOpYGn',
         'redirect' => 'http://localhost:8000/autentificare/google/callback',
-    ]
+    ],
+    'twitter' => [
+    'client_id' => 'TwoBjSMA2GVeLan8OFN7TJXsP',
+    'client_secret' => 'cMXcoUXu3bU4Y2P1yWD8RYecy68C664HKPDtV7fmCfn8wDlOZm',
+    'redirect' => 'http://localhost:8000/autentificare/twitter/callback',
+]
+
 
 ];

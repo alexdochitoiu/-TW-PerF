@@ -18,7 +18,10 @@ Route::get('/anunt', function () {
 });
 
 Route::get('/adauga_anunt',function () {
-    return view('pages.adauga_anunt');
+    if($user=Auth::user()){
+        return view('pages.adauga_anunt');
+    }
+    else return redirect('/autentificare');
 });
 Route::get('/ajutor',function () {
     return view('pages.help');
@@ -33,3 +36,7 @@ Route::get('/logout','SessionsController@destroy');
 Route::get('/autentificare/{provider}', 'SessionsController@redirectToProvider');
 Route::get('/autentificare/{provider}/callback', 'SessionsController@handleProviderCallback');
 
+Route::post('/adauga_anunt', [
+        'uses' => 'AnuntController@postCreateAnunt',
+        'as' => 'adauga.anunt'
+    ]);

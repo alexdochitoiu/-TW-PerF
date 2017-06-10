@@ -45,7 +45,7 @@ class SessionsController extends Controller
     {
 
         if (!auth()->attempt(request(['email', 'password']))) {
-            return back()->with('error', 'username or passwor incorrect ');
+            return back()->with('error', 'username or password incorrect ');
 
         }
 
@@ -77,11 +77,18 @@ class SessionsController extends Controller
             return $row;
         });
 
-        $user = $user->toArray();
+        if(isset($user[0]->email)) {
+            auth()->login($user[0]);
+            $user = $user->toArray();
 
 
-        $message = 'Conectare noua de pe browser a userului ' . $user[0]['username'] . ' ,daca nu sunteti dumneavoastra va rugam sa contactati administratorul la tel:0733096380 ,Echipa Perf';
-       $this->send_messages($message,$user[0]['phone']);
+            $message = 'Conectare noua de pe browser a userului ' . $user[0]['username'] . ' ,daca nu sunteti dumneavoastra va rugam sa contactati administratorul la tel:0733096380 ,Echipa Perf';
+            $this->send_messages($message,$user[0]['phone']);
+            return 1;
+        } else {return 0;}
+
+
+
 
 
 
@@ -101,8 +108,13 @@ class SessionsController extends Controller
 
     {
         $user = Socialite::driver($provider)->user();
-        $this->login_with_email($user->getEmail());
-        return redirect('/');
+        if($this->login_with_email($user->getEmail()))
+        {
+
+        return redirect('/');}
+        else {
+        return back()->with('error', 'nu exista acest user sau conexiunea pe '.$provider.' nu se poate stabili ');
+    }
 
         // $user->token;
     }
