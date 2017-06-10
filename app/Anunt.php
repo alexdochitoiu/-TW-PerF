@@ -12,4 +12,8 @@ class Anunt extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function imagine() {
+        return $this->hasOne('App\Imagine');
+    }
+
 }

@@ -5,12 +5,9 @@
 @endsection
 
 @section('content')
-
-
-
-
     <div class="container">
         <div class="row">
+            <form action="{{route('adauga.anunt')}}" method="post">
             <div class="col-sm-12 col-xs-12 background-black margin-top-20">
 
                 <h1 class="text-center title_add_announce">Adauga anuntul tau aici</h1>
@@ -91,16 +88,16 @@
                     <h3 class="text-center title_add_announce">Adauga Detalii</h3>
                     <div class="col-sm-12 col-xs-12 margin-top-bottom-15px padding-right-0 padding-left-0">
                         <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                        maxlength="60" name="title" type="text" value=""
+                                                        maxlength="60" name="titlu" type="text" value=""
                                                         placeholder="Titlu anunt"></label>
                         <label class="width-100"><textarea
                                     class="text_input width-100 font-size-20px details_announce textarea-announce"
-                                    maxlength="500" name="title"
-                                    placeholder="Detalii"></textarea></label>
+                                    maxlength="500" name="descriere"
+                                    placeholder="Descriere"></textarea></label>
                         <label class="width-100"><input
                                     class="text_input width-100 font-size-20px details_announce display-inline"
-                                    maxlength="60" name="title" type="text" value=""
-                                    placeholder="Pret(RONI)"></label>
+                                    maxlength="60" name="pret" type="text" value=""
+                                    placeholder="Pret (RON)"></label>
 
                         <h5 class="title_add_announce">Categorie</h5>
                         <select id="select_add_announce"
@@ -160,10 +157,9 @@
 
                         </select>
                         <h5 class="title_add_announce">Vanzare / Inchiriere</h5>
-                        <select class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
-                            <option>Selecteaza..</option>
-                            <option>Vanzare</option>
-                            <option>Inchiriere</option>
+                        <select name="tipTranzactie" class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option value="Vanzare">Vanzare</option>
+                            <option value="Inchiriere">Inchiriere</option>
 
 
                         </select>
@@ -492,16 +488,18 @@
                         </label>
                     </div>
                     <div class=" col-sm-12 col-xs-12 text-center">
-                        <a href="/"><span class="bottom_announce_1">
+                        <button type="submit" style="background :none;border:none;"><span class="bottom_announce_1">
                             Adauga anunt
-                        </span> </a>
+                        </span> </button>
                     </div>
+                    <input type="hidden" value="{{ Session::token() }}" name="_token" />
                     <div class="padding-10"></div>
 
                 </div>
 
 
             </div>
+            </form>
         </div>
     </div>
 @endsection
