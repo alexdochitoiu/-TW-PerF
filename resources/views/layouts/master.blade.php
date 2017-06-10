@@ -49,7 +49,7 @@
         <div class="row">
             <div class="col-sm-12 col-xs-12">
                 <div class="img-logo-header">
-                    <a href="/"><img class="logo-header" src="images/logo.png" alt="image logo"/></a>
+                    <a href="/"><img class="logo-header" src="../images/logo.png" alt="image logo"/></a>
                 </div>
                 <div class="menu-desktop">
                     <div class="header-information">
@@ -107,9 +107,9 @@
 <script src="{{asset('js/perf.js')}}"></script>
 <footer class="color-header">
     <h4> Ne puteti urmari pe: </h4>
-    <a href="http://www.facebook.com/"><img src="images/facebook.png" alt="fb"/></a>
-    <a href="http://www.google.com/"><img src="images/googleplus.png" alt="google"/></a>
-    <a href="http://www.twitter.com/"><img src="images/twitter.png" alt="twitter"/></a>
+    <a href="http://www.facebook.com/"><img src="../images/facebook.png" alt="fb"/></a>
+    <a href="http://www.google.com/"><img src="../images/googleplus.png" alt="google"/></a>
+    <a href="http://www.twitter.com/"><img src="../images/twitter.png" alt="twitter"/></a>
     <br>
     <span>PerF &copy; 2017</span>
 </footer>
