@@ -51,7 +51,7 @@ $(document).ready(function() {
 			getCoordsAfterClick();
 		else {
 			//createMarkList(clientPos, "school");
-			createLayers();
+			//createLayers();
 			getAll();
 			
 		}
@@ -109,7 +109,7 @@ $(document).ready(function() {
     		console.log(lat);
     		console.log(lng);
     		var latLng = new google.maps.LatLng(lat, lng);
-    		icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
+    		icn = 'images/google-map/terenuri-marker.png';
     		name = "Noul dumneavoastra anunt.";
     		createMarker(latLng, icn, name);
     		
@@ -143,10 +143,16 @@ $(document).ready(function() {
 
     function getAll() {
     	$.get("api/anunturi", function(anunturi) {
-    		//console.log(anunturi);
+    		console.log(anunturi);
     		for (var i = 0; i < anunturi.length; i++) {
     			var latLng = new google.maps.LatLng(anunturi[i].latitudine, anunturi[i].longitudine);
-    			var icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
+    			if(anunturi[i].tipImobil == 0)
+    				var icn = 'images/google-map/terenuri-marker.png';
+    			else
+    				if(anunturi[i].tipImobil == 1)
+    					var icn = 'images/google-map/birouri-marker.png';
+    				else
+    					var icn = 'images/google-map/locuinte-marker.png';
     			var name = anunturi[i].titlu;
 
     			createMarker(latLng, icn, name); 
