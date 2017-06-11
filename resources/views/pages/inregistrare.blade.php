@@ -14,31 +14,12 @@
         <div class="container">
             <div class="box_register">
                 <h3 class="authTitle">Inregistrare cont pe PerF</h3>
-                <div class="row socialButtons">
-                    <div class="col-xs-4 col-sm-4">
-                        <a href="#" class="btn btn-lg btn-block btn-facebook">
-                            <i class="fa fa-facebook visible-xs"></i>
-                            <span class="hidden-xs">Facebook</span>
-                        </a>
-                    </div>
-                    <div class="col-xs-4 col-sm-4">
-                        <a href="#" class="btn btn-lg btn-block btn-twitter">
-                            <i class="fa fa-twitter visible-xs"></i>
-                            <span class="hidden-xs">Twitter</span>
-                        </a>
-                    </div>
-                    <div class="col-xs-4 col-sm-4">
-                        <a href="#" class="btn btn-lg btn-block btn-google">
-                            <i class="fa fa-google-plus visible-xs"></i>
-                            <span class="hidden-xs">Google +</span>
-                        </a>
-                    </div>
-                </div>
+
 
                 <div class="row loginOr">
                     <div class="col-xs-12 col-sm-12">
                         <hr class="hrOr">
-                        <span class="spanOr">sau</span>
+
                     </div>
                 </div>
 

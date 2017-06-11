@@ -88,6 +88,7 @@ class AnuntController extends Controller
                 break;
         }
         $imagine = new Imagine();
+
         //add images here
         $imagine->save();
         $anunt->id_imagine = $imagine->id;
