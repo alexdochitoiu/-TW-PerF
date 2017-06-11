@@ -26,6 +26,7 @@ class CreateLocuintasTable extends Migration
             $table->integer('etaj');
             $table->integer('totalEtaje');
             $table->integer('numarBai');
+            $table->integer('numarCamere');
             $table->boolean('centralaTermica');
             $table->boolean('balcon');
             $table->boolean('gradina');

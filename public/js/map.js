@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 		var clientPos = new google.maps.LatLng(latVal, lngVal);
 		createMap(clientPos);
-
+		console.log(clientPos);
 		var marker= new google.maps.Marker({
         	position: clientPos,
     		map: map,
@@ -50,8 +50,9 @@ $(document).ready(function() {
         if(adaugaAnunt)
 			getCoordsAfterClick();
 		else {
-			createMarkList(clientPos, "school");
-			createLayers();
+			//createMarkList(clientPos, "school");
+			//createLayers();
+			getAll();
 			
 		}
 	}
@@ -67,6 +68,19 @@ $(document).ready(function() {
 		marker = newMarker;
 		if(adaugaAnunt == null)
 			popupInfoMarker(marker);
+	}
+
+	//Create marker pentru anunt
+	function createMarkerForAnunt(latLng, icn, name, anunt) {
+		var newMarker = new google.maps.Marker({
+    			position: latLng,
+    			map: map,
+    			icon: icn,
+    			title: name
+  			});
+		marker = newMarker;
+		if(adaugaAnunt == null)
+			popupInfoMarker(marker, anunt);
 	}
 
 	//Create mark List(cu imobilele din BD)
@@ -100,14 +114,15 @@ $(document).ready(function() {
 	//Coords after click(pentru "adauga anunt")
 	function getCoordsAfterClick() {
 		google.maps.event.addListener(map, "click", function(event) {
-    		console.log(marker);
+    		//console.log(marker);
     		if(marker != null)
     			marker.setMap(null);
     		var lat = event.latLng.lat();
     		var lng = event.latLng.lng();
-    		
+    		console.log(lat);
+    		console.log(lng);
     		var latLng = new google.maps.LatLng(lat, lng);
-    		icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
+    		icn = 'images/google-map/terenuri-marker.png';
     		name = "Noul dumneavoastra anunt.";
     		createMarker(latLng, icn, name);
     		
@@ -115,8 +130,10 @@ $(document).ready(function() {
 		});
 	}
 
-	function popupInfoMarker(marker) {
-		var contentString = 'Informatii Imobil';
+	function popupInfoMarker(marker, anunt) {
+		var contentString = '<h4><a href="#">' + anunt.titlu + '</a></h4>' + 
+			'<h6><b> de ' + anunt.tipTranzactie + '</b></h6>' +
+			'<h6><b>Pret:</b> ' + anunt.pret + '</h6>';
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString
@@ -137,5 +154,24 @@ $(document).ready(function() {
  		map.data.add({geometry: new google.maps.Data.Polygon([
 			layer
 		])});
+    }
+
+    function getAll() {
+    	$.get("api/anunturi", function(anunturi) {
+    		console.log(anunturi);
+    		for (var i = 0; i < anunturi.length; i++) {
+    			var latLng = new google.maps.LatLng(anunturi[i].latitudine, anunturi[i].longitudine);
+    			if(anunturi[i].tipImobil == 0)
+    				var icn = 'images/google-map/terenuri-marker.png';
+    			else
+    				if(anunturi[i].tipImobil == 1)
+    					var icn = 'images/google-map/birouri-marker.png';
+    				else
+    					var icn = 'images/google-map/locuinte-marker.png';
+    			var name = anunturi[i].titlu;
+
+    			createMarkerForAnunt(latLng, icn, name, anunturi[i]); 
+    		}
+    	});
     }
 });

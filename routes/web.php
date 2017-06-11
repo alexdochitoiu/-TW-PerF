@@ -14,7 +14,7 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/anunt', function () {
-    return view('pages.anunt');
+    return view('pages.anunt_locuinta');
 });
 
 Route::get('/adauga_anunt',function () {
@@ -41,3 +41,5 @@ Route::post('/adauga_anunt', [
         'uses' => 'AnuntController@postCreateAnunt',
         'as' => 'adauga.anunt'
     ]);
+
+Route::get('/anunturi/{id}', 'AnuntController@show');
