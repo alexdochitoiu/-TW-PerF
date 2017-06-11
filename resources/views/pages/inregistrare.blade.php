@@ -31,7 +31,7 @@
                                 <h4 class="text_login">Nume Cont:</h4>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input type="text" pattern=".{15,18}" class="form-control" name="username" id="username"  placeholder="Nume Cont(max 20 caractere)"
+                                    <input type="text" title="Atentie, intre 15 si 18 caractere fara spatii!!" pattern=".{15,18}" class="form-control" name="username" id="username"  placeholder="Nume Cont(max 20 caractere)"
                                            required value="{{ old('username') }}">
                                 </div>
                                 @if(!empty($errors->username))
@@ -52,14 +52,14 @@
                                 <h4 class="text_login">Parola:</h4>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                    <input type="password" class="form-control" name="password" placeholder="Parola"
+                                    <input type="password" class="form-control" name="password" placeholder="Parola" title="Minim 5 caractere!!" pattern=".{5,20}"
                                            required>
                                 </div>
                                 <h4 class="text_login">Confirma Parola:</h4>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                     <input type="password" class="form-control" name="confirm-password"
-                                           placeholder="Confirma Parola" required>
+                                           placeholder="Confirma Parola" title="Minim 5 caractere!!" pattern=".{5,20}" required>
                                 </div>
                                 @if(!empty($errors->confirm_password))
                                     <h4 style="color:red"><i class="fa fa-hand-o-up"

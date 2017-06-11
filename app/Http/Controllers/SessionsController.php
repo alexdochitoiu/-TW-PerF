@@ -114,7 +114,7 @@ class SessionsController extends Controller
         });
 
         if(isset($user_check[0])){
-            
+
         if($this->login_with_email($user->getEmail()))
         {
 
