@@ -21,21 +21,21 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/font-awesome.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/perf.css')}}">
     <!-- Core CSS file -->
-    <link rel="stylesheet" href="gallery/photoswipe.css">
+    <link rel="stylesheet" href="../gallery/photoswipe.css">
 
     <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
          In the folder of skin CSS file there are also:
          - .png and .svg icons sprite,
          - preloader.gif (for browsers that do not support CSS animations) -->
-    <link rel="stylesheet" href="gallery/default-skin/default-skin.css">
+    <link rel="stylesheet" href="../gallery/default-skin/default-skin.css">
 
     <!-- Core JS file -->
-    <script src="gallery/photoswipe.min.js"></script>
+    <script src="../gallery/photoswipe.min.js"></script>
 
     <!-- UI JS file -->
-    <script src="gallery/photoswipe-ui-default.min.js"></script>
+    <script src="../gallery/photoswipe-ui-default.min.js"></script>
 
-    <link rel="icon" href="images/icon.png" type="image/png"/>
+    <link rel="icon" href="../images/icon.png" type="image/png"/>
     @yield('head')
 </head>
 <body>

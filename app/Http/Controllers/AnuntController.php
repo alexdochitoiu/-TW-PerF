@@ -7,6 +7,7 @@ use App\Teren;
 use App\Birou;
 use App\Locuinta;
 use App\Imagine;
+use App\User;
 use Illuminate\Http\Request;
 
 class AnuntController extends Controller
@@ -93,5 +94,45 @@ class AnuntController extends Controller
         $anunt->id_imagine = $imagine->id;
         $request->user()->anunturi()->save($anunt);
         return redirect('/');
+    }
+
+    public function show($id) {
+        $anunt = Anunt::find($id);
+        $imagini = Imagine::find($anunt->id_imagine);
+        $user = User::find($anunt->user_id);
+        $arr = null;
+        switch ($anunt->tipImobil) {
+            case 0: //Teren
+                $teren = Teren::find($anunt->id_imobil);
+                $arr = [
+                    'anunt' => $anunt,
+                    'user' => $user,
+                    'imagine' => $imagini,
+                    'teren' => $teren
+                ];
+                break;
+            case 1: //Birou
+                $birou = Birou::find($anunt->id_imobil);
+                $arr = [
+                    'anunt' => $anunt,
+                    'user' => $user,
+                    'imagine' => $imagini,
+                    'birou' => $birou
+                ];
+                break;
+
+            case 2: //Locuinta
+                $locuinta = Locuinta::find($anunt->id_imobil);
+                $arr = [
+                    'anunt' => $anunt,
+                    'user' => $user,
+                    'imagine' => $imagini,
+                    'locuinta' => $locuinta
+                ];
+                break;
+        }
+
+        return view('pages.anunt')
+            ->with('arr', $arr);
     }
 }
