@@ -499,7 +499,7 @@
 
 
                 <div id="add_announce_submit" class="col-sm-12 col-xs-12 padding-10 margin-bottom-30px">
-                    <h5 class="title_add_announce">Alegeti metoda de marcare pe harta:</h5>
+                    <h5 class="title_add_announce">Alegeti metoda de marcare a imobilului pe harta:</h5>
                     <select id="select_marker_method"
                                 class="form-control height-70px margin-8-0 font-size-20px border-radius-10 margin-bottom-10">
                             <option value="map">Click pe harta - Daca nu va aflati in acest moment in imobilul pe care doriti sa-l vindeti/inchiriati</option>

@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/anunturi','AnuntController@getAll');
+Route::get('/anunturi/{id}','AnuntController@getImobilById');
