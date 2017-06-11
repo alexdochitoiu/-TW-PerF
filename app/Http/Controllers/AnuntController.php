@@ -66,6 +66,7 @@ class AnuntController extends Controller
                 $locuinta = new Locuinta();
                 $locuinta->tip = $request['tipL'];
                 $locuinta->suprafata = $request['suprafataL'];
+                $locuinta->numarCamere = $request['nrCamereL'];
                 $locuinta->localitate = $request['localitateL'];
                 $locuinta->zona = $request['zonaL'];
                 $locuinta->compartimentare = $request['compartimentareL'];

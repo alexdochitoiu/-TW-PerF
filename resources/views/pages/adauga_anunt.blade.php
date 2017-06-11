@@ -224,6 +224,16 @@
 
                             </select>
                         </div>
+                        <h5 class="title_add_announce">Numar camere</h5>
+                        <select name="nrCamereL"
+                                class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
                         <h5 class="title_add_announce">Stare</h5>
                         <select name="stareL"
                                 class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
