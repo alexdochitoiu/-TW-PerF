@@ -15,14 +15,14 @@ class CreateImaginesTable extends Migration
     {
         Schema::create('imagini', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('imagine1');
-            $table->string('imagine2');
-            $table->string('imagine3');
-            $table->string('imagine4');
-            $table->string('imagine5');
-            $table->string('imagine6');
-            $table->string('imagine7');
-            $table->string('imagine8');
+            $table->string('imagine1')->default('path');
+            $table->string('imagine2')->default('path');;
+            $table->string('imagine3')->default('path');;
+            $table->string('imagine4')->default('path');;
+            $table->string('imagine5')->default('path');;
+            $table->string('imagine6')->default('path');;
+            $table->string('imagine7')->default('path');;
+            $table->string('imagine8')->default('path');;
         });
     }
 
