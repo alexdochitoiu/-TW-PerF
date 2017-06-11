@@ -70,6 +70,19 @@ $(document).ready(function() {
 			popupInfoMarker(marker);
 	}
 
+	//Create marker pentru anunt
+	function createMarkerForAnunt(latLng, icn, name, anunt) {
+		var newMarker = new google.maps.Marker({
+    			position: latLng,
+    			map: map,
+    			icon: icn,
+    			title: name
+  			});
+		marker = newMarker;
+		if(adaugaAnunt == null)
+			popupInfoMarker(marker, anunt);
+	}
+
 	//Create mark List(cu imobilele din BD)
 	function createMarkList(clientPos, type) {
 		var request = {
@@ -117,8 +130,10 @@ $(document).ready(function() {
 		});
 	}
 
-	function popupInfoMarker(marker) {
-		var contentString = 'Informatii Imobil';
+	function popupInfoMarker(marker, anunt) {
+		var contentString = '<h4><a href="#">' + anunt.titlu + '</a></h4>' + 
+			'<h6><b> de ' + anunt.tipTranzactie + '</b></h6>' +
+			'<h6><b>Pret:</b> ' + anunt.pret + '</h6>';
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString
@@ -155,7 +170,7 @@ $(document).ready(function() {
     					var icn = 'images/google-map/locuinte-marker.png';
     			var name = anunturi[i].titlu;
 
-    			createMarker(latLng, icn, name); 
+    			createMarkerForAnunt(latLng, icn, name, anunturi[i]); 
     		}
     	});
     }
