@@ -8,8 +8,10 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">Trimite mesaj privat vanzatorului</h3>
             </div>
+            <form class="form-horizontal" method="post" action="/trimite_mesaj_utilizator">
             <div class="modal-body bg-style">
-                <form class="form-horizontal" method="post" action="#">
+
+                    {{csrf_field()}}
                     <div class="form-group">
 
                         <label for="name" class="col-sm-2 control-label">Nume</label>
@@ -18,9 +20,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="col-sm-2 control-label">E-mail</label>
+                        <label for="email" class="col-sm-2 control-label">Telefon</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="email" name="email" value="">
+                            <input type="number" class="form-control" id="email" name="email" value="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -28,15 +30,18 @@
                         <div class="col-sm-10">
                             <textarea class="form-control" rows="4" name="message"></textarea>
                         </div>
+                        <input style="display:none" type="text" name="telefon" value="{{$arr['user'] -> phone}}">
+                        <input style="display:none" type="text" name="titlu_anunt" value="{{$arr['anunt']->titlu}}">
                     </div>
-                </form>
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn bg-green-color">
-                    <img src="images/message.png" width="25" alt=""/>
+                <button type="submit" class="btn bg-green-color">
+                    <img src="../images/message.png" width="25" alt=""/>
                     Trimite mesaj
                 </button>
             </div>
+            </form>
         </div>
 
     </div>

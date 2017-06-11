@@ -17,15 +17,6 @@ window.onload = function(){
         $(this).toggleClass('active');
     });
 
-    $('.add_image').on("click", function () {
-
-        var img = document.createElement("img");
-
-        img.src = "image.png";
-        var src = document.getElementById("x");
-
-        src.appendChild(img);
-    });
 
     $('#select_add_announce').on('change', function () {
 
