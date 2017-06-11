@@ -25,7 +25,7 @@ $(document).ready(function() {
 
 		var clientPos = new google.maps.LatLng(latVal, lngVal);
 		createMap(clientPos);
-
+		console.log(clientPos);
 		var marker= new google.maps.Marker({
         	position: clientPos,
     		map: map,
@@ -50,8 +50,9 @@ $(document).ready(function() {
         if(adaugaAnunt)
 			getCoordsAfterClick();
 		else {
-			createMarkList(clientPos, "school");
+			//createMarkList(clientPos, "school");
 			createLayers();
+			getAll();
 			
 		}
 	}
@@ -100,12 +101,13 @@ $(document).ready(function() {
 	//Coords after click(pentru "adauga anunt")
 	function getCoordsAfterClick() {
 		google.maps.event.addListener(map, "click", function(event) {
-    		console.log(marker);
+    		//console.log(marker);
     		if(marker != null)
     			marker.setMap(null);
     		var lat = event.latLng.lat();
     		var lng = event.latLng.lng();
-    		
+    		console.log(lat);
+    		console.log(lng);
     		var latLng = new google.maps.LatLng(lat, lng);
     		icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
     		name = "Noul dumneavoastra anunt.";
@@ -137,5 +139,18 @@ $(document).ready(function() {
  		map.data.add({geometry: new google.maps.Data.Polygon([
 			layer
 		])});
+    }
+
+    function getAll() {
+    	$.get("api/anunturi", function(anunturi) {
+    		//console.log(anunturi);
+    		for (var i = 0; i < anunturi.length; i++) {
+    			var latLng = new google.maps.LatLng(anunturi[i].latitudine, anunturi[i].longitudine);
+    			var icn = 'http://agbs.in/img/1387903479_Map-Marker-Marker-Outside-Chartreuse.png';
+    			var name = anunturi[i].titlu;
+
+    			createMarker(latLng, icn, name); 
+    		}
+    	});
     }
 });

@@ -94,4 +94,10 @@ class AnuntController extends Controller
         $request->user()->anunturi()->save($anunt);
         return redirect('/');
     }
+
+    public function getAll() {
+        $anunturi = Anunt::all();
+
+        return $anunturi;
+    }
 }
