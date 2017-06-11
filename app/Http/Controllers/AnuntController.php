@@ -90,6 +90,7 @@ class AnuntController extends Controller
                 break;
         }
         $imagine = new Imagine();
+
         //add images here
         $imagine->save();
         $anunt->id_imagine = $imagine->id;
@@ -143,4 +144,21 @@ class AnuntController extends Controller
 
         return $anunturi;
     }
+
+    public function getImobilById($id) {
+         $anunt = Anunt::find($id);
+ 
+         switch ($anunt->tipImobil) {
+            case 0: //Teren
+                $result = Teren::find($anunt->id_imobil);
+                break;
+            case 1: //Birouri
+                $result = Birou::find($anunt->id_imobil);
+                break;
+            case 2: //Locuinte
+                $result = Locuinta::find($anunt->id_imobil);
+                break;
+         }
+         return $result;
+     }
 }

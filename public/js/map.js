@@ -1,5 +1,7 @@
 var map;
 var adaugaAnunt = document.getElementById('adaugaAnunt');
+var tipImobil = "all";
+
 
 $(document).ready(function() {
 
@@ -22,10 +24,10 @@ $(document).ready(function() {
 		//console.log(position);
 		var latVal = position.coords.latitude;
 		var lngVal = position.coords.longitude;
-		console.log(lngVal, latVal);
+		//console.log(lngVal, latVal);
 		var clientPos = new google.maps.LatLng(latVal, lngVal);
 		createMap(clientPos);
-		console.log(clientPos);
+		//console.log(clientPos);
 		var marker= new google.maps.Marker({
         	position: clientPos,
     		map: map,
@@ -53,7 +55,6 @@ $(document).ready(function() {
 			//createMarkList(clientPos, "school");
 			createLayers();
 			getAll();
-			
 		}
 	}
 
@@ -83,7 +84,7 @@ $(document).ready(function() {
 			popupInfoMarker(marker, anunt);
 	}
 
-	//Create mark List(cu imobilele din BD)
+	//Create mark List(O lista de markere de acelasi tip)
 	function createMarkList(clientPos, type) {
 		var request = {
     		location: clientPos,
@@ -119,28 +120,36 @@ $(document).ready(function() {
     			marker.setMap(null);
     		var lat = event.latLng.lat();
     		var lng = event.latLng.lng();
-    		console.log(lat);
-    		console.log(lng);
+
     		var latLng = new google.maps.LatLng(lat, lng);
     		icn = 'images/google-map/terenuri-marker.png';
     		name = "Noul dumneavoastra anunt.";
     		createMarker(latLng, icn, name);
     		
-    		//console.log("Lat=" + lat + "; Lng=" + lng);
+    		console.log("Lat=" + lat + "; Lng=" + lng);
 		});
 	}
 
 	function popupInfoMarker(marker, anunt) {
-		var contentString = '<h4><a href="/anunturi/' + anunt.id + '">' + anunt.titlu + '</a></h4>' + 
-			'<h6><b> de ' + anunt.tipTranzactie + '</b></h6>' +
-			'<h6><b>Pret:</b> ' + anunt.pret + '</h6>';
+		$.get("/api/anunturi/" + anunt.id, function(imobil) {
+			var locuinta;
+			var zona;
+			locuinta = imobil.localitate;
+			zona = imobil.zona;
+		
+			var contentString = '<h4><a href="/anunturi/' + anunt.id + '">' + anunt.titlu + '</a></h4>' + 
+				'<h6><b> de ' + anunt.tipTranzactie + '</b></h6>' +
+				'<h6><b>Pret:</b> ' + anunt.pret + '</h6>' +
+				'<h6><b>Localitate:</b> ' + locuinta + '</h6>' +
+				'<h6><b>Zona:</b> ' + zona + '</h6>';
 
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
+	        var infowindow = new google.maps.InfoWindow({
+	          content: contentString
+	        });
 
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
+	        marker.addListener('click', function() {
+	          infowindow.open(map, marker);
+	        });
         });
     }
 
@@ -148,11 +157,69 @@ $(document).ready(function() {
     	//TrafficLayer
 		var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(map);
+
+        //layer
+        var layerCoords = [
+          {lat: 47.14167495211281, lng: 27.60015606880188},
+          {lat: 47.146555376804145, lng: 27.61065101636632},
+          {lat: 47.14286591116594, lng: 27.636340141034452},
+          {lat: 47.143216188120405, lng: 27.65367794141639},
+          {lat: 47.141108653146105, lng: 27.659870624574978},
+          {lat: 47.13715315163723, lng: 27.606934547457058}
+        ];
+
+        var layer = new google.maps.Polygon({
+        	paths: layerCoords,
+        	strokeColor: "#000000",
+        	strokeOpacity: 0.3,
+        	fillColor: "#000000",
+        	fillOpacity: 0.3
+        })
+
+        layer.setMap(map);
+
+        //layer
+		var layerCoords = [
+          {lat: 47.19317705096081, lng: 27.547737118438818},
+          {lat: 47.18635265579396, lng: 27.54413223476149},
+          {lat: 47.178343077436566, lng: 27.55110168378451},
+          {lat: 47.179407784808774, lng: 27.55384826581576},
+          {lat: 47.18626223840244, lng: 27.557946682500187},
+          {lat: 47.19276877671284, lng: 27.554346086690202}
+        ];
+
+        var layer = new google.maps.Polygon({
+        	paths: layerCoords,
+        	strokeColor: "#009900",
+        	strokeOpacity: 0.3,
+        	fillColor: "#009900",
+        	fillOpacity: 0.3
+        })
+
+        layer.setMap(map);
+
+        //layer
+		var layerCoords = [
+          {lat: 47.16525563746856, lng: 27.60733794537373},
+          {lat: 47.15031463294404, lng: 27.578498834045604},
+          {lat: 47.199090809524066, lng: 27.5546379131265},
+          {lat: 47.18905918011078, lng: 27.587425225647166}
+        ];
+
+        var layer = new google.maps.Polygon({
+        	paths: layerCoords,
+        	strokeColor: "#990000",
+        	strokeOpacity: 0.3,
+        	fillColor: "#990000",
+        	fillOpacity: 0.3
+        })
+
+        layer.setMap(map);
     }
 
     function getAll() {
     	$.get("../api/anunturi", function(anunturi) {
-    		console.log(anunturi);
+    		//console.log(anunturi);
     		for (var i = 0; i < anunturi.length; i++) {
     			var latLng = new google.maps.LatLng(anunturi[i].latitudine, anunturi[i].longitudine);
     			if(anunturi[i].tipImobil == 0)

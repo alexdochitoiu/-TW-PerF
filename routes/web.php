@@ -27,7 +27,7 @@ Route::get('/ajutor',function () {
     return view('pages.help');
 
 });
-
+Route::post('/trimite_mesaj_utilizator','SendMail@trimite_mesaj');
 Route::get('/autentificare','SessionsController@create');
 Route::post('/trimite_parola','SendMail@send_email');
 Route::post('/autentificare','SessionsController@store');
