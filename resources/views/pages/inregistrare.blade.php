@@ -50,7 +50,7 @@
                                 <h4 class="text_login">Nume Cont:</h4>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input type="text" class="form-control" name="username" id="username"  placeholder="Nume Cont(max 20 caractere)"
+                                    <input type="text" pattern=".{15,18}" class="form-control" name="username" id="username"  placeholder="Nume Cont(max 20 caractere)"
                                            required value="{{ old('username') }}">
                                 </div>
                                 @if(!empty($errors->username))
