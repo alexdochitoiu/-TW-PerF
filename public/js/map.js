@@ -22,7 +22,7 @@ $(document).ready(function() {
 		//console.log(position);
 		var latVal = position.coords.latitude;
 		var lngVal = position.coords.longitude;
-
+		console.log(lngVal, latVal);
 		var clientPos = new google.maps.LatLng(latVal, lngVal);
 		createMap(clientPos);
 		console.log(clientPos);
@@ -51,7 +51,7 @@ $(document).ready(function() {
 			getCoordsAfterClick();
 		else {
 			//createMarkList(clientPos, "school");
-			//createLayers();
+			createLayers();
 			getAll();
 			
 		}
@@ -131,7 +131,7 @@ $(document).ready(function() {
 	}
 
 	function popupInfoMarker(marker, anunt) {
-		var contentString = '<h4><a href="#">' + anunt.titlu + '</a></h4>' + 
+		var contentString = '<h4><a href="/anunturi/' + anunt.id + '">' + anunt.titlu + '</a></h4>' + 
 			'<h6><b> de ' + anunt.tipTranzactie + '</b></h6>' +
 			'<h6><b>Pret:</b> ' + anunt.pret + '</h6>';
 
@@ -145,29 +145,23 @@ $(document).ready(function() {
     }
 
     function createLayers() {
-    	layer = [
-    		{lat: 47.151726, lng: 27.587914},
-    		{lat: 47.152726, lng: 27.588914},
-    		{lat: 47.152726, lng: 27.587914},
-    		{lat: 47.151726, lng: 27.586914}
- 		];
- 		map.data.add({geometry: new google.maps.Data.Polygon([
-			layer
-		])});
+    	//TrafficLayer
+		var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
     }
 
     function getAll() {
-    	$.get("api/anunturi", function(anunturi) {
+    	$.get("../api/anunturi", function(anunturi) {
     		console.log(anunturi);
     		for (var i = 0; i < anunturi.length; i++) {
     			var latLng = new google.maps.LatLng(anunturi[i].latitudine, anunturi[i].longitudine);
     			if(anunturi[i].tipImobil == 0)
-    				var icn = 'images/google-map/terenuri-marker.png';
+    				var icn = '../images/google-map/terenuri-marker.png';
     			else
     				if(anunturi[i].tipImobil == 1)
-    					var icn = 'images/google-map/birouri-marker.png';
+    					var icn = '../images/google-map/birouri-marker.png';
     				else
-    					var icn = 'images/google-map/locuinte-marker.png';
+    					var icn = '../images/google-map/locuinte-marker.png';
     			var name = anunturi[i].titlu;
 
     			createMarkerForAnunt(latLng, icn, name, anunturi[i]); 
