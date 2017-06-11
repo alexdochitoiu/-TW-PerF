@@ -42,4 +42,8 @@ Route::post('/adauga_anunt', [
         'as' => 'adauga.anunt'
     ]);
 
+Route::get('/search', [
+    'uses' => 'IndexController@search',
+    'as' => 'search.anunt'
+]);
 Route::get('/anunturi/{id}', 'AnuntController@show');
