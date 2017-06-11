@@ -16,19 +16,19 @@
 
                         <label for="name" class="col-sm-2 control-label">Nume</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" name="name" value="">
+                            <input type="text" class="form-control" required id="name" name="name" value="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="col-sm-2 control-label">Telefon</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="email" name="email" value="">
+                            <input type="number" class="form-control" required id="email" name="email" value="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Mesaj</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" rows="4" name="message"></textarea>
+                            <textarea class="form-control" required maxlength="150" rows="4" name="message"></textarea>
                         </div>
                         <input style="display:none" type="text" name="telefon" value="{{$arr['user'] -> phone}}">
                         <input style="display:none" type="text" name="titlu_anunt" value="{{$arr['anunt']->titlu}}">
