@@ -96,7 +96,8 @@ class AnuntController extends Controller
         return redirect('/');
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $anunt = Anunt::find($id);
         $imagini = Imagine::find($anunt->id_imagine);
         $user = User::find($anunt->user_id);
@@ -134,5 +135,11 @@ class AnuntController extends Controller
 
         return view('pages.anunt')
             ->with('arr', $arr);
+    }
+
+    public function getAll() {
+        $anunturi = Anunt::all();
+
+        return $anunturi;
     }
 }

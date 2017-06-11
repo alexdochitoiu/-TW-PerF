@@ -886,6 +886,11 @@ h1.pretAnunt span {
 
 }
 
+.img-popup {
+    width: 10px;
+    height: 10px;
+}
+
 @media (min-width: 993px) {
     .box_login {
         margin-left: 30px;
