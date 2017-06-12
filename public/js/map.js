@@ -1,6 +1,35 @@
+//Verificare pentru pos actuala sau afisare harta
+$('#select_marker_method').on('change', function () {
+
+    if ($("#select_marker_method").val() == "posActuala") {
+        $('#mapSelected').addClass('display-search');
+        getLocation();
+    }
+    else {
+        $('#mapSelected').removeClass('display-search');
+    }
+});
+
+//Get geolocation for adauga anunt
+  function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(sendGeolocation);
+    } else {
+        alert("Avem nevoie de locatia dumneavoastra pentru a localiza coordonatele imobilului pe care doriti sa-l vindeti.");
+    }
+  }
+
+  //Trimitem coordonatele catre id-urile din HTMl
+  function sendGeolocation(position) {
+    document.getElementById('longitudine').value = position.coords.longitude;
+    document.getElementById('latitudine').value = position.coords.latitude;
+  }
+
+
+//Harta propriuzisa
 var map;
 var adaugaAnunt = document.getElementById('adaugaAnunt');
-var tipImobil = "all";
+var posActuala = document.getElementById('posActuala');
 
 
 $(document).ready(function() {
@@ -29,11 +58,11 @@ $(document).ready(function() {
 		createMap(clientPos);
 		//console.log(clientPos);
 		var marker= new google.maps.Marker({
-        	position: clientPos,
+        position: clientPos,
     		map: map,
     		title: "Locatia Dumneavoastra."
-        });
-	}
+    });
+  }
 
 	function fail() {
 		alert("Avem nevoie de locatia dumneavoastra pentru a va arata imobilele din jurul dumneavoastra.");
@@ -125,7 +154,8 @@ $(document).ready(function() {
     		icn = 'images/google-map/terenuri-marker.png';
     		name = "Noul dumneavoastra anunt.";
     		createMarker(latLng, icn, name);
-    		
+    		document.getElementById('longitudine').value = lng;
+        document.getElementById('latitudine').value = lat;
     		console.log("Lat=" + lat + "; Lng=" + lng);
 		});
 	}
