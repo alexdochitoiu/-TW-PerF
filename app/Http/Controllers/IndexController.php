@@ -25,32 +25,58 @@ class IndexController extends Controller
     public function search(Request $request) {
 
         switch ($request->get('tipImobil')) {
-
             case 0:
-                $anunturi = Anunt::where('tipImobil', '=', 0)
-                    ->join('users', 'users.id', '=', 'anunturi.user_id')
-                    ->join('terenuri', 'terenuri.id', '=', 'anunturi.id_imobil')
-                    ->where('localitate', '=', $request->get('city'))
-                    ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
-                    ->get();
+                if($request->get('city') != "") {
+                    $anunturi = Anunt::where('tipImobil', '=', 0)
+                        ->join('users', 'users.id', '=', 'anunturi.user_id')
+                        ->join('terenuri', 'terenuri.id', '=', 'anunturi.id_imobil')
+                        ->where('localitate', '=', $request->get('city'))
+                        ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
+                        ->get();
+                }
+                else {
+                    $anunturi = Anunt::where('tipImobil', '=', 0)
+                        ->join('users', 'users.id', '=', 'anunturi.user_id')
+                        ->join('terenuri', 'terenuri.id', '=', 'anunturi.id_imobil')
+                        ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
+                        ->get();
+                }
                 break;
 
             case 1:
-                $anunturi = Anunt::where('tipImobil', '=', 1)
-                    ->join('users', 'users.id', '=', 'anunturi.user_id')
-                    ->join('birouri', 'birouri.id', '=', 'anunturi.id_imobil')
-                    ->where('localitate', '=', $request->get('city'))
-                    ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
-                    ->get();
+                if($request->get('city') != "") {
+                    $anunturi = Anunt::where('tipImobil', '=', 1)
+                        ->join('users', 'users.id', '=', 'anunturi.user_id')
+                        ->join('birouri', 'birouri.id', '=', 'anunturi.id_imobil')
+                        ->where('localitate', '=', $request->get('city'))
+                        ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
+                        ->get();
+                }
+                else {
+                    $anunturi = Anunt::where('tipImobil', '=', 1)
+                        ->join('users', 'users.id', '=', 'anunturi.user_id')
+                        ->join('birouri', 'birouri.id', '=', 'anunturi.id_imobil')
+                        ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
+                        ->get();
+                }
                 break;
 
             case 2:
-                $anunturi = Anunt::where('tipImobil', '=', 2)
-                    ->join('users', 'users.id', '=', 'anunturi.user_id')
-                    ->join('locuinte', 'locuinte.id', '=', 'anunturi.id_imobil')
-                    ->where('localitate', '=', $request->get('city'))
-                    ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
-                    ->get();
+                if($request->get('city') != "") {
+                    $anunturi = Anunt::where('tipImobil', '=', 2)
+                        ->join('users', 'users.id', '=', 'anunturi.user_id')
+                        ->join('locuinte', 'locuinte.id', '=', 'anunturi.id_imobil')
+                        ->where('localitate', '=', $request->get('city'))
+                        ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
+                        ->get();
+                }
+                else {
+                    $anunturi = Anunt::where('tipImobil', '=', 2)
+                        ->join('users', 'users.id', '=', 'anunturi.user_id')
+                        ->join('locuinte', 'locuinte.id', '=', 'anunturi.id_imobil')
+                        ->where('tipTranzactie', '=', $request->get('tipTranzactie'))
+                        ->get();
+                }
                 break;
         }
 
