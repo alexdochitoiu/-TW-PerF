@@ -7,7 +7,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <form action="{{route('adauga.anunt')}}" method="post">
+            <form action="{{route('adauga.anunt')}}" method="post" enctype="multipart/form-data">
                 <div class="col-sm-12 col-xs-12 background-black margin-top-20">
 
                     <h1 class="text-center title_add_announce">Adauga anuntul tau aici</h1>
@@ -15,54 +15,82 @@
                     <div class="col-sm-6 col-xs-12">
                         <h3 class="text-center title_add_announce">Adauga Imagini</h3>
                         <div class="add_photo_announce col-sm-12 col-xs-12 margin-top-bottom-15px background-grey">
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline add_image  text-center background-image-announce-first background-image-announce"
-                                     id="image1">
-                                    <input id="imagePreview1" data-preview="#preview" name="image" accept="image/*"
-                                           type="file" id="imageInput" class="hidden-input">
+
+
+                                <div class="col-sm-4 col-xs-6 padding-10">
+                                    <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                         id="image1">
+                                        <img  id="output1"/>
+                                    </div>
+                                </div>
+                                <input id="imagePreview1" data-preview="#preview" name="image1" accept="image/*"
+                                       type="file" id="imageInput1" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image2">
+                                    <img  id="output2"/>
+                                </div>
+                            </div>
+                            <input id="imagePreview2" data-preview="#preview" name="image2" accept="image/*"
+                                   type="file" id="imageInput2" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image3">
+                                    <img  id="output3"/>
+                                </div>
+                            </div>
+                            <input id="imagePreview3" data-preview="#preview" name="image3" accept="image/*"
+                                   type="file" id="imageInput3" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image4">
+                                    <img  id="output4"/>
+                                </div>
+                            </div>
+                            <input id="imagePreview4" data-preview="#preview" name="image4" accept="image/*"
+                                   type="file" id="imageInput4" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image5">
+                                    <img  id="output5"/>
+                                </div>
+                            </div>
+                            <input id="imagePreview5" data-preview="#preview" name="image5" accept="image/*"
+                                   type="file" id="imageInput5" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image6">
+                                    <img  id="output6"/>
+                                </div>
+                            </div>
+                            <input id="imagePreview6" data-preview="#preview" name="image6" accept="image/*"
+                                   type="file" id="imageInput6" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image7">
+                                    <img  id="output7"/>
+                                </div>
+                            </div>
+                            <input id="imagePreview7" data-preview="#preview" name="image7" accept="image/*"
+                                   type="file" id="imageInput7" class="hidden-input">
+
+                            <div class="col-sm-4 col-xs-6 padding-10">
+                                <div class="col-sm-12 col-xs-12 display-inline add_image no-padding  text-center  background-image-announce"
+                                     id="image8">
+                                    <img  id="output8"/>
 
                                 </div>
-                                <img class="col-sm-12" id="output"/>
                             </div>
+                            <input id="imagePreview8" data-preview="#preview" name="image8" accept="image/*"
+                                   type="file" id="imageInput8" class="hidden-input">
 
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div id="theDiv"
-                                     class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                    <input class="input_image upload_img" style="display:none;" type="file" name="pic"
-                                           accept="image/*">
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-xs-4 padding-10">
-                                <div class="col-sm-12 col-xs-12 display-inline background-image-announce text-center">
-                                    <i class="fa fa-file-image-o " aria-hidden="true"></i>
-                                </div>
-                            </div>
+
 
 
 
@@ -485,10 +513,9 @@
                     </div>
 
 
-
-                <div id="add_announce_submit" class="col-sm-12 col-xs-12 padding-10 margin-bottom-30px">
-                    <h5 class="title_add_announce">Alegeti metoda de marcare a imobilului pe harta:</h5>
-                    <select id="select_marker_method"
+                    <div id="add_announce_submit" class="col-sm-12 col-xs-12 padding-10 margin-bottom-30px">
+                        <h5 class="title_add_announce">Alegeti metoda de marcare a imobilului pe harta:</h5>
+                        <select id="select_marker_method"
                                 class="form-control height-70px margin-8-0 font-size-20px border-radius-10 margin-bottom-10">
                             <option value="map">Click pe harta - Daca nu va aflati in acest moment in imobilul pe care
                                 doriti sa-l vindeti/inchiriati

@@ -9,10 +9,39 @@ use App\Locuinta;
 use App\Imagine;
 use App\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
 
 class AnuntController extends Controller
 {
-    public function postCreateAnunt(Request $request) {
+    public function addImage($request, $image)
+    {
+
+        $post = (object)[];
+
+
+        if ($request->hasFile($image)) {
+
+
+            if ( $da=$request->file($image)->isValid()) {
+                $this->validate($request, [
+                    $image => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
+
+                $imageName = time() . str_random(10) . '.' . $request->$image->getClientOriginalExtension();
+                $request->$image->move(public_path('images'), $imageName);
+                $post->picture = "/images/" . $imageName;
+                return $post->picture;
+            }
+
+
+
+        }
+
+        return '/images/house.jpg';
+    }
+
+    public function postCreateAnunt(Request $request)
+    {
         $anunt = new Anunt();
         $anunt->tipImobil = $request['tipImobil'];
         $anunt->titlu = $request['titlu'];
@@ -22,7 +51,7 @@ class AnuntController extends Controller
         $anunt->longitudine = 0.0;
         $anunt->latitudine = 0.0;
 
-        switch($anunt->tipImobil) {
+        switch ($anunt->tipImobil) {
             case 0: //Terenuri
                 $teren = new Teren();
                 $teren->tip = $request['tipT'];
@@ -90,6 +119,16 @@ class AnuntController extends Controller
                 break;
         }
         $imagine = new Imagine();
+        $request1 = request();
+
+        $imagine->imagine1 = $this->addImage($request1, 'image1');
+        $imagine->imagine2 = $this->addImage($request1, 'image2');
+        $imagine->imagine3 = $this->addImage($request1, 'image3');
+        $imagine->imagine4 = $this->addImage($request1, 'image4');
+        $imagine->imagine5 = $this->addImage($request1, 'image5');
+        $imagine->imagine6 = $this->addImage($request1, 'image6');
+        $imagine->imagine7 = $this->addImage($request1, 'image7');
+        $imagine->imagine8 = $this->addImage($request1, 'image8');
 
         //add images here
         $imagine->save();
@@ -139,16 +178,18 @@ class AnuntController extends Controller
             ->with('arr', $arr);
     }
 
-    public function getAll() {
+    public function getAll()
+    {
         $anunturi = Anunt::all();
 
         return $anunturi;
     }
 
-    public function getImobilById($id) {
-         $anunt = Anunt::find($id);
- 
-         switch ($anunt->tipImobil) {
+    public function getImobilById($id)
+    {
+        $anunt = Anunt::find($id);
+
+        switch ($anunt->tipImobil) {
             case 0: //Teren
                 $result = Teren::find($anunt->id_imobil);
                 break;
@@ -158,7 +199,7 @@ class AnuntController extends Controller
             case 2: //Locuinte
                 $result = Locuinta::find($anunt->id_imobil);
                 break;
-         }
-         return $result;
-     }
+        }
+        return $result;
+    }
 }
