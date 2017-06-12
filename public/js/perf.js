@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function () {
 
     $(window).on('scroll', function () {
 
@@ -89,9 +89,10 @@ window.onload = function(){
 
         });
     }
+
     help();
 
-    var openPhotoSwipe = function() {
+    var openPhotoSwipe = function () {
         var pswpElement = document.querySelectorAll('.pswp')[0];
 
         // build items array
@@ -149,148 +150,229 @@ window.onload = function(){
 
         };
 
-        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
     };
     $('#imgGallery').on('click', openPhotoSwipe);
 
-/*
-    //MAP Scripts
-    //
-    // Holds the Polygon feature
+    /*
+     //MAP Scripts
+     //
+     // Holds the Polygon feature
 
-    //Bularga - Tigani (layer)
-    var polyFeature1 = new ol.Feature({
-        geometry: new ol.geom.Polygon([
-            [
-                [27.59240, 47.14743],
-                [27.60695, 47.13709],
-                [27.62231, 47.14500],
-                [27.59459, 47.14906]
-            ]
-        ])
-    });
-    var style1 = new ol.style.Style({
-        //I don't know how to get the color of your kml to fill each room
-        //fill: new ol.style.Fill({ color: '#000' }),
-        stroke: new ol.style.Stroke({ color: '#000' }),
-        fill: new ol.style.Fill({ color: 'rgba(0, 0, 0, 0.20)' })
-    });
-    polyFeature1.setStyle(style1);
-    polyFeature1.getGeometry().transform('EPSG:4326', 'EPSG:3857');
+     //Bularga - Tigani (layer)
+     var polyFeature1 = new ol.Feature({
+     geometry: new ol.geom.Polygon([
+     [
+     [27.59240, 47.14743],
+     [27.60695, 47.13709],
+     [27.62231, 47.14500],
+     [27.59459, 47.14906]
+     ]
+     ])
+     });
+     var style1 = new ol.style.Style({
+     //I don't know how to get the color of your kml to fill each room
+     //fill: new ol.style.Fill({ color: '#000' }),
+     stroke: new ol.style.Stroke({ color: '#000' }),
+     fill: new ol.style.Fill({ color: 'rgba(0, 0, 0, 0.20)' })
+     });
+     polyFeature1.setStyle(style1);
+     polyFeature1.getGeometry().transform('EPSG:4326', 'EPSG:3857');
 
-    // Layer 2 Frumoasa (Aer curat - verde)
-    var polyFeature2 = new ol.Feature({
-        geometry: new ol.geom.Polygon([
-            [
-                [27.60585, 47.13734],
-                [27.57272, 47.13407],
-                [27.57457, 47.10958],
-                [27.63534, 47.11215]
-            ]
-        ])
-    });
-    var style2 = new ol.style.Style({
-        //I don't know how to get the color of your kml to fill each room
-        //fill: new ol.style.Fill({ color: '#000' }),
-        stroke: new ol.style.Stroke({ color: '#0F5E01' }),
-        fill: new ol.style.Fill({ color: 'rgba(26, 153, 3, 0.20)' })
-    });
-    polyFeature2.setStyle(style2);
-    polyFeature2.getGeometry().transform('EPSG:4326', 'EPSG:3857');
+     // Layer 2 Frumoasa (Aer curat - verde)
+     var polyFeature2 = new ol.Feature({
+     geometry: new ol.geom.Polygon([
+     [
+     [27.60585, 47.13734],
+     [27.57272, 47.13407],
+     [27.57457, 47.10958],
+     [27.63534, 47.11215]
+     ]
+     ])
+     });
+     var style2 = new ol.style.Style({
+     //I don't know how to get the color of your kml to fill each room
+     //fill: new ol.style.Fill({ color: '#000' }),
+     stroke: new ol.style.Stroke({ color: '#0F5E01' }),
+     fill: new ol.style.Fill({ color: 'rgba(26, 153, 3, 0.20)' })
+     });
+     polyFeature2.setStyle(style2);
+     polyFeature2.getGeometry().transform('EPSG:4326', 'EPSG:3857');
 
-    //Layer 3
-    var polyFeature3 = new ol.Feature({
-        geometry: new ol.geom.Polygon([
-            [
-                [27.58021, 47.16931],
-                [27.56995, 47.18328],
-                [27.55807, 47.17932],
-                [27.56867, 47.17156]
-            ]
-        ])
-    });
-    var style3 = new ol.style.Style({
-        //I don't know how to get the color of your kml to fill each room
-        //fill: new ol.style.Fill({ color: '#000' }),
-        stroke: new ol.style.Stroke({ color: '#be0000' }),
-        fill: new ol.style.Fill({ color: 'rgba(179, 0, 0, 0.20)' })
-    });
-    polyFeature3.setStyle(style3);
-    polyFeature3.getGeometry().transform('EPSG:4326', 'EPSG:3857');
+     //Layer 3
+     var polyFeature3 = new ol.Feature({
+     geometry: new ol.geom.Polygon([
+     [
+     [27.58021, 47.16931],
+     [27.56995, 47.18328],
+     [27.55807, 47.17932],
+     [27.56867, 47.17156]
+     ]
+     ])
+     });
+     var style3 = new ol.style.Style({
+     //I don't know how to get the color of your kml to fill each room
+     //fill: new ol.style.Fill({ color: '#000' }),
+     stroke: new ol.style.Stroke({ color: '#be0000' }),
+     fill: new ol.style.Fill({ color: 'rgba(179, 0, 0, 0.20)' })
+     });
+     polyFeature3.setStyle(style3);
+     polyFeature3.getGeometry().transform('EPSG:4326', 'EPSG:3857');
 
-//A vector layer to hold the features
-    var vectorLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            features: [polyFeature1, polyFeature2, polyFeature3]
-        })
-    });
+     //A vector layer to hold the features
+     var vectorLayer = new ol.layer.Vector({
+     source: new ol.source.Vector({
+     features: [polyFeature1, polyFeature2, polyFeature3]
+     })
+     });
 
-    var layer = new ol.layer.Tile({
-        source: new ol.source.OSM()
-    });
+     var layer = new ol.layer.Tile({
+     source: new ol.source.OSM()
+     });
 
-    var defaultLoc = ol.proj.transform([47.1584549, 27.601441799999975], 'EPSG:4326', 'EPSG:3857');
+     var defaultLoc = ol.proj.transform([47.1584549, 27.601441799999975], 'EPSG:4326', 'EPSG:3857');
 
-    var view = new ol.View({
-        center: defaultLoc,
-        zoom: 16
-    });
+     var view = new ol.View({
+     center: defaultLoc,
+     zoom: 16
+     });
 
-    var map = new ol.Map({
-        target: 'map',
-        layers: [layer, vectorLayer],
-        view: view,
-        controls: ol.control.defaults().extend([
-            new ol.control.FullScreen()
-        ]),
-    });
+     var map = new ol.Map({
+     target: 'map',
+     layers: [layer, vectorLayer],
+     view: view,
+     controls: ol.control.defaults().extend([
+     new ol.control.FullScreen()
+     ]),
+     });
 
-    // create an Overlay using the div with id location.
-    var marker = new ol.Overlay({
-        element: document.getElementById('location'),
-        positioning: 'center-center',
-        stopEvent: false
-    });
+     // create an Overlay using the div with id location.
+     var marker = new ol.Overlay({
+     element: document.getElementById('location'),
+     positioning: 'center-center',
+     stopEvent: false
+     });
 
-    // add it to the map
-    map.addOverlay(marker);
-    // create a Geolocation object setup to track the position of the device
-    var geolocation = new ol.Geolocation({
-        tracking: true
-    });
+     // add it to the map
+     map.addOverlay(marker);
+     // create a Geolocation object setup to track the position of the device
+     var geolocation = new ol.Geolocation({
+     tracking: true
+     });
 
-    // bind the projection to the view so that positions are reported in the
-    // projection of the view
-    geolocation.bindTo('projection', view);
+     // bind the projection to the view so that positions are reported in the
+     // projection of the view
+     geolocation.bindTo('projection', view);
 
-    // bind the marker's position to the geolocation object, the marker will
-    // move automatically when the GeoLocation API provides position updates
-    marker.bindTo('position', geolocation);
-    // when the GeoLocation API provides a position update, center the view
-    // on the new position
-    geolocation.on('change:position', function() {
-        var p = geolocation.getPosition();
-        console.log(p[0] + ' : ' + p[1]);
-        view.setCenter([parseFloat(p[0]), parseFloat(p[1])]);
-    });
-    */
+     // bind the marker's position to the geolocation object, the marker will
+     // move automatically when the GeoLocation API provides position updates
+     marker.bindTo('position', geolocation);
+     // when the GeoLocation API provides a position update, center the view
+     // on the new position
+     geolocation.on('change:position', function() {
+     var p = geolocation.getPosition();
+     console.log(p[0] + ' : ' + p[1]);
+     view.setCenter([parseFloat(p[0]), parseFloat(p[1])]);
+     });
+     */
 
 };
 
 
-    $("#username").on("keydown", function (e) {
-        console.log(e.which);
-        return (e.which !== 32 && (e.which <90));
+$("#username").on("keydown", function (e) {
+    console.log(e.which);
+    return (e.which !== 32 && (e.which < 90));
 
-    });
+});
 
-    $('#select_marker_method').on('change', function () {
+$('#select_marker_method').on('change', function () {
 
-        if ($("#select_marker_method").val() == "posActuala") {
-            $('#mapSelected').addClass('display-search');
-        }
-        else {
-            $('#mapSelected').removeClass('display-search');
-        }
-    });
+    if ($("#select_marker_method").val() == "posActuala") {
+        $('#mapSelected').addClass('display-search');
+    }
+    else {
+        $('#mapSelected').removeClass('display-search');
+    }
+});
+$('#image1').on('click', function () {
+
+    $('#imagePreview1').trigger('click');
+})
+$('#imagePreview1').on('change', function (event) {
+    $("#output1").addClass('add-image-preview');
+    var output = document.getElementById('output1');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+$('#image2').on('click', function () {
+
+    $('#imagePreview2').trigger('click');
+})
+$('#imagePreview2').on('change', function (event) {
+    $("#output2").addClass('add-image-preview');
+    var output = document.getElementById('output2');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+$('#image3').on('click', function () {
+
+    $('#imagePreview3').trigger('click');
+})
+$('#imagePreview3').on('change', function (event) {
+    $("#output3").addClass('add-image-preview');
+    var output = document.getElementById('output3');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+$('#image4').on('click', function () {
+
+    $('#imagePreview4').trigger('click');
+})
+$('#imagePreview4').on('change', function (event) {
+    $("#output4").addClass('add-image-preview');
+    var output = document.getElementById('output4');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+$('#image5').on('click', function () {
+
+    $('#imagePreview5').trigger('click');
+})
+$('#imagePreview5').on('change', function (event) {
+    $("#output5").addClass('add-image-preview');
+    var output = document.getElementById('output5');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+
+$('#image6').on('click', function () {
+
+    $('#imagePreview6').trigger('click');
+})
+$('#imagePreview6').on('change', function (event) {
+    $("#output6").addClass('add-image-preview');
+    var output = document.getElementById('output6');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+$('#image7').on('click', function () {
+
+    $('#imagePreview7').trigger('click');
+})
+$('#imagePreview7').on('change', function (event) {
+    $("#output7").addClass('add-image-preview');
+    var output = document.getElementById('output7');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
+$('#image8').on('click', function () {
+
+    $('#imagePreview8').trigger('click');
+})
+$('#imagePreview8').on('change', function (event) {
+    $("#output8").addClass('add-image-preview');
+    var output = document.getElementById('output8');
+    output.src = URL.createObjectURL(event.target.files[0]);
+
+});
