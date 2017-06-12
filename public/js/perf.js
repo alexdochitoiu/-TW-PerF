@@ -153,7 +153,7 @@ window.onload = function () {
         var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
     };
-    $('#imgGallery').on('click', openPhotoSwipe);
+  //  $('#imgGallery').on('click', openPhotoSwipe);
 
     /*
      //MAP Scripts
