@@ -110,50 +110,54 @@
                 </div>
                 <div class="col-sm-3 col-xs-6 ">
                     <div class="col-sm-12 col-xs-12 ">
-                        <select class="form-control margin-bottom-10">
+                        <select name="nrCamere"
+                                class="form-control margin-bottom-10">
                             <option value="" disabled selected> Numar camere </option>
-                            <option>Toate</option>
-                            <option>O camera</option>
-                            <option>2 camere</option>
-                            <option>3 camere</option>
-                            <option>4 camere</option>
-                            <option>5 camere sau mai multe</option>
+                            <option value="0">Toate</option>
+                            <option value="1">O camera</option>
+                            <option value="2">2 camere</option>
+                            <option value="3">3 camere</option>
+                            <option value="4">4 camere</option>
+                            <option value="5">5 camere sau mai multe</option>
                         </select>
-                        <select class="form-control margin-bottom-10">
+                        <select name="compartimentare"
+                                class="form-control margin-bottom-10">
                             <option value="" disabled selected> Compartimentare </option>
-                            <option>Toate</option>
-                            <option>Decomandat</option>
-                            <option>Semidecomandat</option>
-                            <option>Nedecomandat</option>
-                            <option>Circular</option>
+                            <option value="0">Toate</option>
+                            <option value="Decomandat">Decomandat</option>
+                            <option value="Semidecomandat">Semidecomandat</option>
+                            <option value="Nedecomandat">Nedecomandat</option>
+                            <option value="Circular">Circular</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <div class="col-sm-12 col-xs-12 ">
-                        <select class="form-control margin-bottom-10">
+                        <select name="etaj"
+                                class="form-control margin-bottom-10">
                             <option value="" disabled selected> Etaj </option>
-                            <option>Toate</option>
-                            <option>Parter</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10 sau peste</option>
+                            <option value="0">Toate</option>
+                            <option value="Parter">Parter</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10 sau peste</option>
                         </select>
-                        <select class="form-control margin-bottom-10">
+                        <select name="anConstr"
+                                class="form-control margin-bottom-10">
                             <option value="" disabled selected> An constructie </option>
-                            <option>Toate</option>
-                            <option>Inainte de 1977</option>
-                            <option>1977-1990</option>
-                            <option>1990-2000</option>
-                            <option>2000-2013</option>
-                            <option>Dupa 2013</option>
+                            <option value="0">Toate</option>
+                            <option value="i1997">Inainte de 1977</option>
+                            <option value="77-90">1977-1990</option>
+                            <option value="90-00">1990-2000</option>
+                            <option value="00-13">2000-2013</option>
+                            <option value="d2013">Dupa 2013</option>
                         </select>
                     </div>
                 </div>
