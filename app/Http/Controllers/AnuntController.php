@@ -202,4 +202,13 @@ class AnuntController extends Controller
         }
         return $result;
     }
+
+    public function deleteAnunt($id) {
+        if (Auth::check()) {
+            $anunt = Anunt::find($id);
+            $anunt->delete();
+            return back();
+        }
+        return redirect('/autentificare');
+    }
 }

@@ -21,7 +21,20 @@ class IndexController extends Controller
         return view('pages.index')
             ->with('anunturi', $anunturi);
     }
+    public function anunturileMele() {
+        $user=\Auth::user();
+        $anunturi = DB::table('anunturi')
+            ->join('users', 'users.id', '=', 'anunturi.user_id')
+            ->select('users.name', 'anunturi.*')
+            ->where('users.id', '=', $user->id)
+            ->get();
 
+        include "smsGateway.php";
+        $smsGateway = new SmsGateway('demo@smsgateway.me', 'password');
+
+        return view('pages.anunturile_mele')
+            ->with('anunturi', $anunturi);
+    }
     public function search(Request $request) {
 
         switch ($request->get('tipImobil')) {

@@ -46,4 +46,8 @@ Route::get('/search', [
     'uses' => 'IndexController@search',
     'as' => 'search.anunt'
 ]);
+
+Route::get('/anunturile_mele','IndexController@anunturileMele');
+Route::get('/anunturile_mele/sterge/{id}','AnuntController@deleteAnunt');
+
 Route::get('/anunturi/{id}', 'AnuntController@show');
