@@ -178,8 +178,15 @@
 
                     <div class="col-sm-12 col-xs-12">
                         <span class="display-inline font-size-20px">
-                            <div style="background-color: red; margin-right: 12px;" class="legend  display-inline"></div>
-                            Zona cu poluare fonica ridicata
+                            <div style="background-color: #FF0000; opacity: 0.6; margin-right: 12px;" class="legend  display-inline"></div>
+                            Zona cu trafic ridicat
+                        </span>
+                    </div>
+
+                     <div class="col-sm-12 col-xs-12">
+                        <span class="display-inline font-size-20px">
+                            <div style="background-color: #000000; opacity: 0.6; margin-right: 12px;" class="legend display-inline"></div>
+                            Zona cu poluare ridicata
                         </span>
                     </div>
                     
@@ -190,12 +197,6 @@
                         </span>
                     </div>
                     
-                    <div class="col-sm-12 col-xs-12">
-                        <span class="display-inline font-size-20px">
-                            <div style="background-color: black; margin-right: 12px;" class="legend display-inline"></div>
-                            Zona periculoasa cu cetateni de etnii diferite
-                        </span>
-                    </div>
                 </div>
             </div>
             <div class="col-sm-3 col-xs-9 contactForm">
