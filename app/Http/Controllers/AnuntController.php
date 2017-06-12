@@ -48,8 +48,8 @@ class AnuntController extends Controller
         $anunt->descriere = $request['descriere'];
         $anunt->pret = $request['pret'];
         $anunt->tipTranzactie = $request['tipTranzactie'];
-        $anunt->longitudine = 0.0;
-        $anunt->latitudine = 0.0;
+        $anunt->longitudine = $request['longitudine'];
+        $anunt->latitudine = $request['latitudine'];
 
         switch ($anunt->tipImobil) {
             case 0: //Terenuri

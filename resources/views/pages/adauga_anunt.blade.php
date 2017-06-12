@@ -524,6 +524,8 @@
                                 care doriti sa-l vindeti/inchiriati
                             </option>
                         </select>
+                        <input id="longitudine"  name="longitudine" type="text"  class="hidden-input">
+                        <input id="latitudine"  name="latitudine" type="text"  class="hidden-input">
                         <div id="mapSelected">
                             <div class="map" id="map">
                                 <div id="adaugaAnunt">
