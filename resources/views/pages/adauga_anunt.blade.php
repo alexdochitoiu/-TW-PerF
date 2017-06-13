@@ -135,7 +135,7 @@
                             <h5 class="title_add_announce">Suprafata</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="suprafataL" type="text" value=""
-                                                            placeholder="Suprafata (mp)" required></label>
+                                                            placeholder="Suprafata (mp)" ></label>
                             <h5 class="title_add_announce">Tip proprietate</h5>
                             <select name="tipL"
                                     class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
@@ -151,11 +151,11 @@
                             <h5 class="title_add_announce">Localitate</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="localitateL" type="text" value=""
-                                                            placeholder="Localitate" required></label>
+                                                            placeholder="Localitate" ></label>
                             <h5 class="title_add_announce">Zona</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="zonaL" type="text" value=""
-                                                            placeholder="Zona" required></label>
+                                                            placeholder="Zona" ></label>
                             <h5 class="title_add_announce">Orientare</h5>
                             <select name="orientareL"
                                     class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
@@ -184,7 +184,7 @@
                             <h5 class="title_add_announce">An contructie</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="anConstructieL" type="text" value=""
-                                                            placeholder="An constructie" required></label>
+                                                            placeholder="An constructie" ></label>
                             <h5 class="title_add_announce">Etaj</h5>
                             <div class="col-sm-5 padding-left-0">
                                 <select name="etajL"
@@ -254,7 +254,7 @@
                             <h5 class="title_add_announce">Nr bai</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="numarBaiL" type="text" value=""
-                                                            placeholder="Nr Bai" required></label>
+                                                            placeholder="Nr Bai" ></label>
 
                             <h5 class="title_add_announce">Alte detalii</h5>
                             <label class="col-sm-6 col-xs-6 text-white">
@@ -308,7 +308,7 @@
                             <h5 class="title_add_announce">Suprafata</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="suprafataT" type="text" value=""
-                                                            placeholder="Suprafata (mp)" required></label>
+                                                            placeholder="Suprafata (mp)" ></label>
                             <h5 class="title_add_announce">Tip</h5>
                             <select name="tipT"
                                     class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
@@ -320,7 +320,7 @@
                             <h5 class="title_add_announce">Localitate</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="localitateT" type="text" value=""
-                                                            placeholder="Localitate" required></label>
+                                                            placeholder="Localitate" ></label>
 
 
                         </div>
@@ -329,7 +329,7 @@
                             <h5 class="title_add_announce">Zona</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="zonaT" type="text" value=""
-                                                            placeholder="Zona" required></label>
+                                                            placeholder="Zona" ></label>
 
                             <h5 class="title_add_announce">Vanzare / Inchiriere</h5>
 
@@ -366,7 +366,7 @@
                             <h5 class="title_add_announce">Suprafata</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="suprafataB" type="text" value=""
-                                                            placeholder="Suprafata (mp)" required></label>
+                                                            placeholder="Suprafata (mp)" ></label>
                             <h5 class="title_add_announce">Tip</h5>
                             <select name="tipB"
                                     class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
@@ -376,11 +376,11 @@
                             <h5 class="title_add_announce">Localitate</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="localitateB" type="text" value=""
-                                                            placeholder="Localitate" required></label>
+                                                            placeholder="Localitate" ></label>
                             <h5 class="title_add_announce">Zona</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="zonaB" type="text" value=""
-                                                            placeholder="Zona" required></label>
+                                                            placeholder="Zona" ></label>
                             <h5 class="title_add_announce">Orientare</h5>
                             <select name="orientareB"
                                     class="form-control  margin-8-0 font-size-20px border-radius-5 margin-bottom-10">
@@ -408,7 +408,7 @@
                             <h5 class="title_add_announce">An constructie</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="anConstructieB" type="text" value=""
-                                                            placeholder="An constructie" required></label>
+                                                            placeholder="An constructie" ></label>
                             <h5 class="title_add_announce">Etaj</h5>
                             <div class="col-sm-5 padding-left-0">
                                 <select name="etajB"
@@ -460,11 +460,11 @@
                             <h5 class="title_add_announce">Locuri Parcare</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="locuriParcareB" type="text" value=""
-                                                            placeholder="Locuri parcare" required></label>
+                                                            placeholder="Locuri parcare" ></label>
                             <h5 class="title_add_announce">Nr bai</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
                                                             maxlength="60" name="numarBaiB" type="text" value=""
-                                                            placeholder="Nr Bai" required></label>
+                                                            placeholder="Nr Bai" ></label>
 
                             <h5 class="title_add_announce">Alte detalii</h5>
                             <label class="col-sm-6 col-xs-6 text-white">
@@ -524,7 +524,7 @@
                         </div>
                         <div class="col-sm-12 col-xs-12 text-center">
                             <label class=" text-white  padding-10 display">
-                                <input type="checkbox"> Sunt de acord cu termenii si conditiile
+                                <input type="checkbox" required> Sunt de acord cu termenii si conditiile
                             </label>
                         </div>
                         <div class=" col-sm-12 col-xs-12 text-center">
