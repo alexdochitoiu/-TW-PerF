@@ -191,34 +191,34 @@ $(document).ready(function() {
       trafficLayer.setMap(map);
 
       //smog layer
-       for(var i = 1; i < 19; i++) {
+       for(var i = 1; i < 37; i++) {
          var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=smog&has_geo=1&extras=geo&per_page=500&page=" + i;
          extractCoordsFromFlickr(url, "smog");
-         if(i <= 2) {
+         if(i <= 4) {
            url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=fum&has_geo=1&extras=geo&per_page=500&page=" + i;
            extractCoordsFromFlickr(url, "smog");
          }
        }
 
       //traffic layer
-      for(var i = 1; i < 392; i++) {
+      for(var i = 1; i < 787; i++) {
         var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=traffic&has_geo=1&extras=geo&per_page=500&page=" + i;
         extractCoordsFromFlickr(url, "traffic");
-        if(i < 30) {
+        if(i < 60) {
           url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=crowded&has_geo=1&extras=geo&per_page=500&page=" + i;
           extractCoordsFromFlickr(url, "traffic");
         }
-        if(i < 8) {
+        if(i < 13) {
           url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=trafic&has_geo=1&extras=geo&per_page=500&page=" + i;
           extractCoordsFromFlickr(url, "traffic");
         }
       }
 
       //fresh air
-      for(var i = 1; i < 501; i++) {
-        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
+      for(var i = 1; i < 1002; i++) {
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=nature&has_geo=1&extras=geo&per_page=500&page=" + i;
         extractCoordsFromFlickr(url, "freshAir");
-        if(i < 5) {
+        if(i < 9) {
           url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
           extractCoordsFromFlickr(url, "freshAir");
         }
@@ -248,7 +248,8 @@ $(document).ready(function() {
 
   function extractCoordsFromFlickr(url, type) {
       $.getJSON(url + "&format=json&jsoncallback=?", function(data){
-        console.log(data);
+        //if (type == "freshAir")
+        //  console.log(data);
         for(var i = 0; i < data.photos.photo.length;i++) {
            if(data.photos.photo[i].latitude < 48.201245706978675 && data.photos.photo[i].latitude > 43.615398506450646) {
              if(data.photos.photo[i].longitude > 20.260986294597387 && data.photos.photo[i].longitude < 29.742187466472387) {
@@ -264,17 +265,17 @@ $(document).ready(function() {
   function createLayer(centerPosLayer, type) {
       if(type == "smog") {
         var colorLayer = '#000000';
-        var opacityLayer = 0.06;
+        var opacityLayer = 0.1;
       }
       else {
         if(type == "traffic") {
           var colorLayer = '#FF0000';
-          var opacityLayer = 0.05;
+          var opacityLayer = 0.1;
         }
         else {
           if(type == "freshAir") {
             var colorLayer = '#00e600';
-            var opacityLayer = 0.01;
+            var opacityLayer = 0.3;
           }
         }
       }
