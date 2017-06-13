@@ -156,7 +156,7 @@ $(document).ready(function() {
     		createMarker(latLng, icn, name);
     		document.getElementById('longitudine').value = lng;
         document.getElementById('latitudine').value = lat;
-    		console.log("Lat=" + lat + "; Lng=" + lng);
+    		//console.log("Lat=" + lat + "; Lng=" + lng);
 		});
 	}
 
@@ -166,6 +166,10 @@ $(document).ready(function() {
 			var zona;
 			locuinta = imobil.localitate;
 			zona = imobil.zona;
+
+      if(anunt.tipTranzactie == "Inchiriere") {
+        anunt.tipTranzactie = "Inchiriat";
+      }
 		
 			var contentString = '<h4><a href="/anunturi/' + anunt.id + '">' + anunt.titlu + '</a></h4>' + 
 				'<h6><b> de ' + anunt.tipTranzactie + '</b></h6>' +
@@ -224,7 +228,7 @@ $(document).ready(function() {
   }
   
 
-    function getAll() {
+  function getAll() {
     	$.get("../api/anunturi", function(anunturi) {
     		//console.log(anunturi);
     		for (var i = 0; i < anunturi.length; i++) {
@@ -241,10 +245,10 @@ $(document).ready(function() {
     			createMarkerForAnunt(latLng, icn, name, anunturi[i]); 
     		}
     	});
-    }
+  }
 
 
-    function extractCoordsFromFlickr(url, type) {
+  function extractCoordsFromFlickr(url, type) {
       $.getJSON(url + "&format=json&jsoncallback=?", function(data){
         for(var i = 0; i < data.photos.photo.length;i++) {
            if(data.photos.photo[i].latitude < 48.201245706978675 && data.photos.photo[i].latitude > 43.615398506450646) {
@@ -255,10 +259,10 @@ $(document).ready(function() {
            }
         }
       });
-    }
+  }
 
 
-    function createLayer(centerPosLayer, type) {
+  function createLayer(centerPosLayer, type) {
       if(type == "smog") {
         var colorLayer = '#000000';
         var opacityLayer = 0.06;
@@ -276,7 +280,6 @@ $(document).ready(function() {
         }
       }
       
-
       var circleLayer = new google.maps.Circle({
                 strokeColor: colorLayer,
                 strokeOpacity: opacityLayer,
@@ -287,5 +290,5 @@ $(document).ready(function() {
                 center: centerPosLayer,
                 radius: 1000
             });
-    }
+  }
 });
