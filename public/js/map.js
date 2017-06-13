@@ -1,6 +1,35 @@
+//Verificare pentru pos actuala sau afisare harta
+$('#select_marker_method').on('change', function () {
+
+    if ($("#select_marker_method").val() == "posActuala") {
+        $('#mapSelected').addClass('display-search');
+        getLocation();
+    }
+    else {
+        $('#mapSelected').removeClass('display-search');
+    }
+});
+
+//Get geolocation for adauga anunt
+  function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(sendGeolocation);
+    } else {
+        alert("Avem nevoie de locatia dumneavoastra pentru a localiza coordonatele imobilului pe care doriti sa-l vindeti.");
+    }
+  }
+
+  //Trimitem coordonatele catre id-urile din HTMl
+  function sendGeolocation(position) {
+    document.getElementById('longitudine').value = position.coords.longitude;
+    document.getElementById('latitudine').value = position.coords.latitude;
+  }
+
+
+//Harta + layere + geolocation + markere pentru imobile
 var map;
 var adaugaAnunt = document.getElementById('adaugaAnunt');
-var tipImobil = "all";
+var posActuala = document.getElementById('posActuala');
 
 
 $(document).ready(function() {
@@ -29,11 +58,11 @@ $(document).ready(function() {
 		createMap(clientPos);
 		//console.log(clientPos);
 		var marker= new google.maps.Marker({
-        	position: clientPos,
+        position: clientPos,
     		map: map,
     		title: "Locatia Dumneavoastra."
-        });
-	}
+    });
+  }
 
 	function fail() {
 		alert("Avem nevoie de locatia dumneavoastra pentru a va arata imobilele din jurul dumneavoastra.");
@@ -125,7 +154,8 @@ $(document).ready(function() {
     		icn = 'images/google-map/terenuri-marker.png';
     		name = "Noul dumneavoastra anunt.";
     		createMarker(latLng, icn, name);
-    		
+    		document.getElementById('longitudine').value = lng;
+        document.getElementById('latitudine').value = lat;
     		console.log("Lat=" + lat + "; Lng=" + lng);
 		});
 	}
@@ -155,67 +185,44 @@ $(document).ready(function() {
 
     function createLayers() {
     	//TrafficLayer
-		var trafficLayer = new google.maps.TrafficLayer();
-        trafficLayer.setMap(map);
+		  var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
 
-        //layer
-        var layerCoords = [
-          {lat: 47.14167495211281, lng: 27.60015606880188},
-          {lat: 47.146555376804145, lng: 27.61065101636632},
-          {lat: 47.14286591116594, lng: 27.636340141034452},
-          {lat: 47.143216188120405, lng: 27.65367794141639},
-          {lat: 47.141108653146105, lng: 27.659870624574978},
-          {lat: 47.13715315163723, lng: 27.606934547457058}
-        ];
+      //smog layer
+       for(var i = 1; i < 19; i++) {
+         var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=smog&has_geo=1&extras=geo&per_page=500&page=" + i;
+         extractCoordsFromFlickr(url, "smog");
+         if(i <= 2) {
+           url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=fum&has_geo=1&extras=geo&per_page=500&page=" + i;
+           extractCoordsFromFlickr(url, "smog");
+         }
+       }
 
-        var layer = new google.maps.Polygon({
-        	paths: layerCoords,
-        	strokeColor: "#000000",
-        	strokeOpacity: 0.3,
-        	fillColor: "#000000",
-        	fillOpacity: 0.3
-        })
+      //traffic layer
+      for(var i = 1; i < 392; i++) {
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=traffic&has_geo=1&extras=geo&per_page=500&page=" + i;
+        extractCoordsFromFlickr(url, "traffic");
+        if(i < 30) {
+          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=crowded&has_geo=1&extras=geo&per_page=500&page=" + i;
+          extractCoordsFromFlickr(url, "traffic");
+        }
+        if(i < 8) {
+          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=trafic&has_geo=1&extras=geo&per_page=500&page=" + i;
+          extractCoordsFromFlickr(url, "traffic");
+        }
+      }
 
-        layer.setMap(map);
-
-        //layer
-		var layerCoords = [
-          {lat: 47.19317705096081, lng: 27.547737118438818},
-          {lat: 47.18635265579396, lng: 27.54413223476149},
-          {lat: 47.178343077436566, lng: 27.55110168378451},
-          {lat: 47.179407784808774, lng: 27.55384826581576},
-          {lat: 47.18626223840244, lng: 27.557946682500187},
-          {lat: 47.19276877671284, lng: 27.554346086690202}
-        ];
-
-        var layer = new google.maps.Polygon({
-        	paths: layerCoords,
-        	strokeColor: "#009900",
-        	strokeOpacity: 0.3,
-        	fillColor: "#009900",
-        	fillOpacity: 0.3
-        })
-
-        layer.setMap(map);
-
-        //layer
-		var layerCoords = [
-          {lat: 47.16525563746856, lng: 27.60733794537373},
-          {lat: 47.15031463294404, lng: 27.578498834045604},
-          {lat: 47.199090809524066, lng: 27.5546379131265},
-          {lat: 47.18905918011078, lng: 27.587425225647166}
-        ];
-
-        var layer = new google.maps.Polygon({
-        	paths: layerCoords,
-        	strokeColor: "#990000",
-        	strokeOpacity: 0.3,
-        	fillColor: "#990000",
-        	fillOpacity: 0.3
-        })
-
-        layer.setMap(map);
-    }
+      //fresh air
+      for(var i = 1; i < 501; i++) {
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
+        extractCoordsFromFlickr(url, "freshAir");
+        if(i < 5) {
+          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
+          extractCoordsFromFlickr(url, "freshAir");
+        }
+      }
+  }
+  
 
     function getAll() {
     	$.get("../api/anunturi", function(anunturi) {
@@ -234,5 +241,51 @@ $(document).ready(function() {
     			createMarkerForAnunt(latLng, icn, name, anunturi[i]); 
     		}
     	});
+    }
+
+
+    function extractCoordsFromFlickr(url, type) {
+      $.getJSON(url + "&format=json&jsoncallback=?", function(data){
+        for(var i = 0; i < data.photos.photo.length;i++) {
+           if(data.photos.photo[i].latitude < 48.201245706978675 && data.photos.photo[i].latitude > 43.615398506450646) {
+             if(data.photos.photo[i].longitude > 20.260986294597387 && data.photos.photo[i].longitude < 29.742187466472387) {
+              var centerPosLayer = new google.maps.LatLng(data.photos.photo[i].latitude, data.photos.photo[i].longitude);
+              createLayer(centerPosLayer, type);
+             }
+           }
+        }
+      });
+    }
+
+
+    function createLayer(centerPosLayer, type) {
+      if(type == "smog") {
+        var colorLayer = '#000000';
+        var opacityLayer = 0.06;
+      }
+      else {
+        if(type == "traffic") {
+          var colorLayer = '#FF0000';
+          var opacityLayer = 0.05;
+        }
+        else {
+          if(type == "freshAir") {
+            var colorLayer = '#00e600';
+            var opacityLayer = 0.01;
+          }
+        }
+      }
+      
+
+      var circleLayer = new google.maps.Circle({
+                strokeColor: colorLayer,
+                strokeOpacity: opacityLayer,
+                strokeWeight: 2,
+                fillColor: colorLayer,
+                fillOpacity: opacityLayer,
+                map: map,
+                center: centerPosLayer,
+                radius: 1000
+            });
     }
 });

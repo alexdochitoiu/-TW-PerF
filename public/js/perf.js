@@ -153,7 +153,7 @@ window.onload = function () {
         var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
     };
-    $('#imgGallery').on('click', openPhotoSwipe);
+  //  $('#imgGallery').on('click', openPhotoSwipe);
 
     /*
      //MAP Scripts
@@ -286,15 +286,6 @@ $("#username").on("keydown", function (e) {
 
 });
 
-$('#select_marker_method').on('change', function () {
-
-    if ($("#select_marker_method").val() == "posActuala") {
-        $('#mapSelected').addClass('display-search');
-    }
-    else {
-        $('#mapSelected').removeClass('display-search');
-    }
-});
 $('#image1').on('click', function () {
 
     $('#imagePreview1').trigger('click');
