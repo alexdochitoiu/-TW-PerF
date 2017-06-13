@@ -14,8 +14,6 @@ $('#select_marker_method').on('change', function () {
   function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(sendGeolocation);
-    } else {
-        alert("Avem nevoie de locatia dumneavoastra pentru a localiza coordonatele imobilului pe care doriti sa-l vindeti.");
     }
   }
 

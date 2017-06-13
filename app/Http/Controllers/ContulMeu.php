@@ -72,7 +72,7 @@ class ContulMeu extends Controller
             $user->save();
 
         }
-        return view('pages.edit_account')->with('user',Auth::user());;
+        return view('pages.contul_meu')->with('user',Auth::user());;
 
 
     }

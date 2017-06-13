@@ -62,11 +62,7 @@
                                 <input type="checkbox" value="remember-me">Tine-ma minte
                             </label>
                         </div>
-                        <div class="col-xs-12 col-md-6">
-                            <p class="forgotPwd">
-                                <a href="#" data-toggle="modal" data-target="#modalResetPass">Ati uitat parola?</a>
-                            </p>
-                        </div>  
+
                         <br>
                         <button class="btn btn-lg btn-primary btn-block btn_costum" type="submit">Autentificare</button>
                     </form>

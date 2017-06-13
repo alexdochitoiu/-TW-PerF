@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Auth;
+
 class AnuntController extends Controller
 {
     public function addImage($request, $image)
@@ -23,7 +24,7 @@ class AnuntController extends Controller
         if ($request->hasFile($image)) {
 
 
-            if ( $da=$request->file($image)->isValid()) {
+            if ($da = $request->file($image)->isValid()) {
                 $this->validate($request, [
                     $image => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
 
@@ -32,7 +33,6 @@ class AnuntController extends Controller
                 $post->picture = "/images/" . $imageName;
                 return $post->picture;
             }
-
 
 
         }
@@ -121,7 +121,7 @@ class AnuntController extends Controller
         $imagine = new Imagine();
         $request1 = request();
 
-        $imagine->imagine1 = $this->addImage($request1, 'image1');
+        $anunt->imagine_prezentare = $imagine->imagine1 = $this->addImage($request1, 'image1');
         $imagine->imagine2 = $this->addImage($request1, 'image2');
         $imagine->imagine3 = $this->addImage($request1, 'image3');
         $imagine->imagine4 = $this->addImage($request1, 'image4');
@@ -203,7 +203,8 @@ class AnuntController extends Controller
         return $result;
     }
 
-    public function deleteAnunt($id) {
+    public function deleteAnunt($id)
+    {
         if (Auth::check()) {
             $anunt = Anunt::find($id);
             $anunt->delete();

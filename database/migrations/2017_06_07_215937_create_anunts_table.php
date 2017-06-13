@@ -25,6 +25,7 @@ class CreateAnuntsTable extends Migration
             $table->string('tipTranzactie');
             $table->double('longitudine');
             $table->double('latitudine');
+            $table->string('imagine_prezentare')->default('path');
             $table->timestamps();
         });
     }
