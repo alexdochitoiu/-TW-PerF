@@ -36,7 +36,11 @@ Route::post('/inregistrare','RegistrationController@store');
 Route::get('/logout','SessionsController@destroy');
 Route::get('/autentificare/{provider}', 'SessionsController@redirectToProvider');
 Route::get('/autentificare/{provider}/callback', 'SessionsController@handleProviderCallback');
-
+Route::get('/contul_meu','ContulMeu@show_account');
+Route::get('/edit_account','ContulMeu@edit_account');
+Route::post('/edit_account','ContulMeu@edit_account_reset');
+Route::get('/reset_password','ContulMeu@reset_password');
+Route::post('/reset_password','ContulMeu@reset_password_reset');
 Route::post('/adauga_anunt', [
         'uses' => 'AnuntController@postCreateAnunt',
         'as' => 'adauga.anunt'
