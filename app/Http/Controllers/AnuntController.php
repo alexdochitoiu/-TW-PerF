@@ -11,7 +11,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
-
+use Auth;
 class AnuntController extends Controller
 {
     public function addImage($request, $image)
