@@ -47,7 +47,7 @@
                          <h4 class="text_login"> Email:</h4>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input type="text" class="form-control" name="email" placeholder="Nume Cont / Email">
+                            <input type="text" class="form-control" name="email" placeholder=" Email">
                         </div>
                         <h4 class="text_login">Parola:</h4>
                         <div class="input-group">
