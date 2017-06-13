@@ -109,7 +109,7 @@
                                         placeholder="Descriere" required></textarea></label>
                             <label class="width-100"><input
                                         class="text_input width-100 font-size-20px details_announce display-inline"
-                                        maxlength="60" name="pret" type="text" value=""
+                                        maxlength="60" name="pret" type="number" value=""
                                         placeholder="Pret (RON)" required></label>
 
                             <h5 class="title_add_announce">Categorie</h5>
@@ -134,7 +134,7 @@
                         <div class="col-sm-6 col-xs-12">
                             <h5 class="title_add_announce">Suprafata</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="suprafataL" type="text" value=""
+                                                            maxlength="60" name="suprafataL" type="number" value=""
                                                             placeholder="Suprafata (mp)" ></label>
                             <h5 class="title_add_announce">Tip proprietate</h5>
                             <select name="tipL"
@@ -253,7 +253,7 @@
                             </select>
                             <h5 class="title_add_announce">Nr bai</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="numarBaiL" type="text" value=""
+                                                            maxlength="60" name="numarBaiL" type="number" value=""
                                                             placeholder="Nr Bai" ></label>
 
                             <h5 class="title_add_announce">Alte detalii</h5>
@@ -307,7 +307,7 @@
                         <div class="col-sm-6 col-xs-12">
                             <h5 class="title_add_announce">Suprafata</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="suprafataT" type="text" value=""
+                                                            maxlength="60" name="suprafataT" type="number" value=""
                                                             placeholder="Suprafata (mp)" ></label>
                             <h5 class="title_add_announce">Tip</h5>
                             <select name="tipT"
@@ -365,7 +365,7 @@
                         <div class="col-sm-6 col-xs-12">
                             <h5 class="title_add_announce">Suprafata</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="suprafataB" type="text" value=""
+                                                            maxlength="60" name="suprafataB" type="number" value=""
                                                             placeholder="Suprafata (mp)" ></label>
                             <h5 class="title_add_announce">Tip</h5>
                             <select name="tipB"
@@ -459,11 +459,11 @@
                             </div>
                             <h5 class="title_add_announce">Locuri Parcare</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="locuriParcareB" type="text" value=""
+                                                            maxlength="60" name="locuriParcareB" type="number" value=""
                                                             placeholder="Locuri parcare" ></label>
                             <h5 class="title_add_announce">Nr bai</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="numarBaiB" type="text" value=""
+                                                            maxlength="60" name="numarBaiB" type="number" value=""
                                                             placeholder="Nr Bai" ></label>
 
                             <h5 class="title_add_announce">Alte detalii</h5>
