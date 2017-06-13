@@ -63,7 +63,7 @@ $(document).ready(function() {
   }
 
 	function fail() {
-		alert("Avem nevoie de locatia dumneavoastra pentru a va arata imobilele din jurul dumneavoastra.");
+		//alert("Avem nevoie de locatia dumneavoastra pentru a va arata imobilele din jurul dumneavoastra.");
 		//default Coords
 		var defaultPos = new google.maps.LatLng(47.151726, 27.587914);
 		createMap(defaultPos);	
@@ -192,34 +192,34 @@ $(document).ready(function() {
 
       //smog layer
        for(var i = 1; i < 19; i++) {
-         var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=smog&has_geo=1&extras=geo&per_page=500&page=" + i;
+         var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=smog&has_geo=1&extras=geo&per_page=500&page=" + i;
          extractCoordsFromFlickr(url, "smog");
          if(i <= 2) {
-           url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=fum&has_geo=1&extras=geo&per_page=500&page=" + i;
+           url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=fum&has_geo=1&extras=geo&per_page=500&page=" + i;
            extractCoordsFromFlickr(url, "smog");
          }
        }
 
       //traffic layer
       for(var i = 1; i < 392; i++) {
-        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=traffic&has_geo=1&extras=geo&per_page=500&page=" + i;
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=traffic&has_geo=1&extras=geo&per_page=500&page=" + i;
         extractCoordsFromFlickr(url, "traffic");
         if(i < 30) {
-          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=crowded&has_geo=1&extras=geo&per_page=500&page=" + i;
+          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=crowded&has_geo=1&extras=geo&per_page=500&page=" + i;
           extractCoordsFromFlickr(url, "traffic");
         }
         if(i < 8) {
-          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=trafic&has_geo=1&extras=geo&per_page=500&page=" + i;
+          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=trafic&has_geo=1&extras=geo&per_page=500&page=" + i;
           extractCoordsFromFlickr(url, "traffic");
         }
       }
 
       //fresh air
       for(var i = 1; i < 501; i++) {
-        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
         extractCoordsFromFlickr(url, "freshAir");
         if(i < 5) {
-          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=c58d15a58b51ccec41c7f192cda47279&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
+          url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=e2792ac7f09657147f00259be9add830&tags=fresh+air&has_geo=1&extras=geo&per_page=500&page=" + i;
           extractCoordsFromFlickr(url, "freshAir");
         }
       }
@@ -248,6 +248,7 @@ $(document).ready(function() {
 
   function extractCoordsFromFlickr(url, type) {
       $.getJSON(url + "&format=json&jsoncallback=?", function(data){
+        console.log(data);
         for(var i = 0; i < data.photos.photo.length;i++) {
            if(data.photos.photo[i].latitude < 48.201245706978675 && data.photos.photo[i].latitude > 43.615398506450646) {
              if(data.photos.photo[i].longitude > 20.260986294597387 && data.photos.photo[i].longitude < 29.742187466472387) {
