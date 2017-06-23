@@ -170,7 +170,7 @@
                     <a href="/anunturi/{{$anunt->id}}" >
                     <div class="announcement">
                         <div> <span>PRET</span> {{$anunt->pret}} RON</div>
-                        
+                        <img src="{{$anunt->imagine_prezentare}}" alt="house"/>
                         <p id="title"> {{$anunt->titlu}}</p>
                         <p id="uploadedBy">Adaugat de {{ $anunt->name }}</p>
                         <p id="timeAdded">{{$anunt->created_at}}</p>

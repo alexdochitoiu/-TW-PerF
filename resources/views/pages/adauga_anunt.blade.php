@@ -183,7 +183,7 @@
                         <div class="col-sm-6 col-xs-12">
                             <h5 class="title_add_announce">An contructie</h5>
                             <label class="width-100"><input class="text_input width-100 font-size-20px details_announce"
-                                                            maxlength="60" name="anConstructieL" type="text" value=""
+                                                            maxlength="60" name="anConstructieL"  type="number" value=""
                                                             placeholder="An constructie" ></label>
                             <h5 class="title_add_announce">Etaj</h5>
                             <div class="col-sm-5 padding-left-0">
